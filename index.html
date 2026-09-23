@@ -4,20 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mirna Morbiducci | Fotografía, Moda y Narrativa Visual</title>
+  <title>Mirna Morbiducci | Fotografía y Narrativa Visual</title>
 
   <meta
     name="description"
-    content="Mirna Morbiducci — Fotografía, narrativa visual, fotografía de moda y producto, contenido para marcas y publicidad digital. Bahía Blanca, Argentina."
+    content="Mirna Morbiducci — Fotografía de moda y producto, narrativa visual y contenido para marcas. Bahía Blanca, Argentina."
   >
 
   <meta name="author" content="Mirna Morbiducci">
-
-  <meta
-    name="keywords"
-    content="fotógrafa, fotografía de moda, fotografía de producto, fotografía para marcas, contenido visual, narrativa visual, publicidad digital, Bahía Blanca, Argentina"
-  >
-
   <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://mirna-photos.github.io/mirnaphotos/">
@@ -25,7 +19,7 @@
   <meta property="og:title" content="Mirna Morbiducci | Fotografía y Narrativa Visual">
   <meta
     property="og:description"
-    content="Fotografía, narrativa visual, moda, producto y contenido para marcas. Bahía Blanca, Argentina."
+    content="Fotografía de moda y producto, narrativa visual y contenido para marcas."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mirna-photos.github.io/mirnaphotos/">
@@ -56,98 +50,375 @@
     ]
   }
   </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f4f1ec;
+      color: #292725;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1050px, 88%);
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: #77716a;
+    }
+
+    h1 {
+      font-size: clamp(58px, 10vw, 110px);
+      font-weight: normal;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 35px;
+    }
+
+    .intro {
+      max-width: 650px;
+      font-size: clamp(21px, 3vw, 30px);
+      line-height: 1.4;
+      color: #514c47;
+    }
+
+    .location {
+      margin-top: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #77716a;
+    }
+
+    section {
+      padding: 100px 0;
+      border-top: 1px solid #d8d2ca;
+    }
+
+    .section-label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #77716a;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 35px;
+    }
+
+    .text {
+      max-width: 700px;
+      font-size: 20px;
+      color: #514c47;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: #d8d2ca;
+      margin-top: 45px;
+    }
+
+    .service {
+      background: #f4f1ec;
+      padding: 35px;
+      min-height: 150px;
+    }
+
+    .service-number {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #8a837b;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      font-size: 25px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #68615b;
+      font-size: 16px;
+    }
+
+    .statement {
+      max-width: 850px;
+      font-size: clamp(30px, 5vw, 55px);
+      line-height: 1.15;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 1px solid #292725;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      background: #292725;
+      color: #f4f1ec;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid #d8d2ca;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #77716a;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 650px) {
+
+      header {
+        min-height: 80vh;
+        padding: 60px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        padding: 28px;
+      }
+
+      .intro {
+        font-size: 21px;
+      }
+
+      .text {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <header>
-    <h1>Mirna Morbiducci</h1>
+    <div class="container hero">
 
-    <p>
-      Fotografía · Narrativa visual · Publicidad digital · Moda
-    </p>
+      <div class="eyebrow">
+        Fotografía · Narrativa visual · Moda
+      </div>
+
+      <h1>Mirna<br>Morbiducci</h1>
+
+      <p class="intro">
+        Fotografía y contenido visual para marcas, proyectos y personas
+        que buscan comunicar con identidad.
+      </p>
+
+      <p class="location">
+        Bahía Blanca · Argentina
+      </p>
+
+    </div>
   </header>
+
 
   <main>
 
     <section>
-      <h2>Fotografía y narrativa visual</h2>
+      <div class="container">
 
-      <p>
-        Soy Mirna Morbiducci, fotógrafa y creadora de contenido visual
-        en Bahía Blanca, Argentina.
-      </p>
+        <div class="section-label">
+          Sobre el trabajo
+        </div>
 
-      <p>
-        Desarrollo imágenes y piezas de comunicación visual para marcas,
-        emprendimientos y proyectos que buscan mostrar sus productos
-        y construir una identidad propia.
-      </p>
+        <h2>
+          Imágenes que construyen una narrativa.
+        </h2>
+
+        <p class="text">
+          Desarrollo propuestas fotográficas y contenido visual para
+          marcas y proyectos, combinando fotografía, dirección visual
+          y comunicación digital.
+        </p>
+
+      </div>
     </section>
 
-    <section>
-      <h2>Servicios</h2>
 
-      <ul>
-        <li>Fotografía de moda</li>
-        <li>Fotografía de producto</li>
-        <li>Fotografía para marcas</li>
-        <li>Contenido visual para redes sociales</li>
-        <li>Dirección y narrativa visual</li>
-        <li>Contenido para publicidad digital</li>
-      </ul>
+    <section>
+      <div class="container">
+
+        <div class="section-label">
+          Servicios
+        </div>
+
+        <h2>
+          Fotografía & contenido
+        </h2>
+
+        <div class="services">
+
+          <div class="service">
+            <div class="service-number">01</div>
+            <h3>Fotografía de moda</h3>
+            <p>
+              Imágenes para prendas, accesorios, campañas y comunicación
+              de marcas de moda.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-number">02</div>
+            <h3>Fotografía de producto</h3>
+            <p>
+              Fotografías que destacan productos, materiales, detalles,
+              texturas y características.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-number">03</div>
+            <h3>Contenido para marcas</h3>
+            <p>
+              Contenido visual pensado para redes sociales, comunicación
+              y presencia digital.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-number">04</div>
+            <h3>Narrativa visual</h3>
+            <p>
+              Desarrollo de una dirección visual coherente con la identidad
+              y el mensaje de cada proyecto.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
-    <section>
-      <h2>Moda y producto</h2>
 
-      <p>
-        Creo contenido fotográfico para prendas, accesorios y productos,
-        buscando destacar sus características, materiales, detalles,
-        texturas y estética de marca.
-      </p>
+    <section>
+      <div class="container">
+
+        <div class="section-label">
+          Mirada
+        </div>
+
+        <p class="statement">
+          Una imagen no solo muestra un producto:
+          también puede transmitir una atmósfera,
+          una identidad y una forma de mirar.
+        </p>
+
+      </div>
     </section>
 
-    <section>
-      <h2>Identidad visual</h2>
-
-      <p>
-        Mi trabajo combina fotografía, narrativa visual y comunicación
-        digital para construir imágenes con una identidad coherente
-        con cada proyecto.
-      </p>
-    </section>
 
     <section>
-      <h2>Ubicación</h2>
+      <div class="container">
 
-      <p>
-        Bahía Blanca, Buenos Aires, Argentina.
-      </p>
-    </section>
+        <div class="section-label">
+          Portfolio
+        </div>
 
-    <section>
-      <h2>Portfolio y contacto</h2>
+        <h2>
+          Trabajos y proyectos
+        </h2>
 
-      <p>
-        <a href="https://www.instagram.com/mirna.photos/">
-          Instagram — @mirna.photos
-        </a>
-      </p>
+        <p class="text">
+          Podés conocer mi trabajo fotográfico y proyectos visuales
+          en Instagram y Behance.
+        </p>
 
-      <p>
-        <a href="https://www.behance.net/mirnamorbiducci">
-          Behance — Mirna Morbiducci
-        </a>
-      </p>
+        <div class="links">
+
+          <a
+            class="button"
+            href="https://www.instagram.com/mirna.photos/"
+            target="_blank"
+            rel="noopener"
+          >
+            Instagram
+          </a>
+
+          <a
+            class="button"
+            href="https://www.behance.net/mirnamorbiducci"
+            target="_blank"
+            rel="noopener"
+          >
+            Behance
+          </a>
+
+        </div>
+
+      </div>
     </section>
 
   </main>
 
+
   <footer>
-    <p>
-      © Mirna Morbiducci
-    </p>
+    <div class="container">
+      Mirna Morbiducci · Fotografía · Bahía Blanca, Argentina
+    </div>
   </footer>
 
 </body>
