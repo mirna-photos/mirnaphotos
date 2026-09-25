@@ -8,21 +8,15 @@
 
   <meta
     name="description"
-    content="Mirna Morbiducci — Fotografía, dirección visual, narrativa y contenido para marcas y proyectos."
+    content="Mirna Morbiducci — Fotografía, dirección visual y narrativa para marcas y proyectos."
   >
 
   <meta name="author" content="Mirna Morbiducci">
-
-  <link
-    rel="canonical"
-    href="https://mirna-photos.github.io/mirnaphotos/"
-  >
 
   <style>
 
     :root {
       --bg: #f3f0eb;
-      --paper: #f8f6f2;
       --text: #292724;
       --muted: #77716a;
       --line: #d8d1c8;
@@ -46,14 +40,14 @@
       line-height: 1.55;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -67,12 +61,7 @@
     ========================= */
 
     nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 27px 0;
-      z-index: 20;
+      padding: 25px 0;
     }
 
     .nav-inner {
@@ -83,26 +72,18 @@
 
     .brand {
       font-family: Arial, sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 28px;
       font-family: Arial, sans-serif;
       font-size: 9px;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
-    }
-
-    .nav-links a {
-      transition: opacity .2s ease;
-    }
-
-    .nav-links a:hover {
-      opacity: .45;
     }
 
 
@@ -111,32 +92,31 @@
     ========================= */
 
     header {
-      min-height: 100vh;
+      min-height: 82vh;
       display: flex;
       align-items: center;
-      padding: 100px 0 80px;
+      padding: 55px 0 100px;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 8vw;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 9vw;
       align-items: center;
     }
 
-    .hero-image {
-      order: 2;
+    .hero-photo {
+      max-width: 500px;
+      justify-self: end;
     }
 
-    .hero-image img {
+    .hero-photo img {
       width: 100%;
-      height: min(610px, 72vh);
-      object-fit: cover;
+      height: auto;
     }
 
     .hero-copy {
-      order: 1;
-      padding-left: 4vw;
+      max-width: 560px;
     }
 
     .eyebrow {
@@ -145,27 +125,33 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: clamp(58px, 8vw, 105px);
+      font-size: clamp(55px, 7.5vw, 100px);
       font-weight: normal;
-      line-height: .87;
-      letter-spacing: -5px;
-      margin-left: -4px;
-      margin-bottom: 38px;
+      line-height: .88;
+      letter-spacing: -4px;
+    }
+
+    .hero-subtitle {
+      margin-top: 40px;
+      max-width: 500px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
     }
 
     .hero-description {
       max-width: 470px;
-      font-size: clamp(19px, 2.2vw, 26px);
-      line-height: 1.38;
-      color: #504b46;
+      margin-top: 30px;
+      font-size: 17px;
+      color: #5c5650;
     }
 
     .location {
-      margin-top: 30px;
+      margin-top: 24px;
       font-family: Arial, sans-serif;
       font-size: 9px;
       letter-spacing: 2px;
@@ -173,32 +159,21 @@
       color: var(--muted);
     }
 
-    .hero-cta {
-      display: inline-block;
-      margin-top: 42px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--text);
-      font-family: Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
 
     /* =========================
-       GENERAL
+       SECCIONES
     ========================= */
 
     section {
-      padding: 125px 0;
+      padding: 110px 0;
       border-top: 1px solid var(--line);
     }
 
-    .section-intro {
+    .section-heading {
       display: grid;
-      grid-template-columns: .3fr 1fr;
+      grid-template-columns: 220px 1fr;
       gap: 60px;
-      margin-bottom: 85px;
+      margin-bottom: 65px;
     }
 
     .section-label {
@@ -211,167 +186,10 @@
 
     h2 {
       max-width: 850px;
-      font-size: clamp(39px, 5.3vw, 70px);
-      font-weight: normal;
-      line-height: 1.02;
-      letter-spacing: -2.5px;
-    }
-
-    .intro-text {
-      max-width: 690px;
-      margin-top: 30px;
-      font-size: 20px;
-      line-height: 1.55;
-      color: #57514b;
-    }
-
-
-    /* =========================
-       MIRADA
-    ========================= */
-
-    .statement {
-      max-width: 1000px;
-      font-size: clamp(42px, 7vw, 88px);
-      line-height: 1.02;
-      letter-spacing: -3px;
-    }
-
-    .statement-small {
-      max-width: 580px;
-      margin-top: 55px;
-      margin-left: 35%;
-      font-size: 19px;
-      color: #5d5751;
-    }
-
-
-    /* =========================
-       PROYECTOS
-    ========================= */
-
-    .project {
-      margin-top: 125px;
-    }
-
-    .project:first-child {
-      margin-top: 0;
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
-      margin-bottom: 32px;
-    }
-
-    .project-number {
-      font-family: Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 2px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .project-title {
-      font-size: clamp(32px, 4vw, 52px);
+      font-size: clamp(38px, 5vw, 67px);
       font-weight: normal;
       line-height: 1;
-    }
-
-    .project-description {
-      max-width: 440px;
-      font-size: 16px;
-      color: #625c55;
-      text-align: right;
-    }
-
-
-    /* =========================
-       CARRUSEL
-    ========================= */
-
-    .carousel {
-      position: relative;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      padding-bottom: 8px;
-      cursor: grab;
-    }
-
-    .carousel-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .carousel-track:active {
-      cursor: grabbing;
-    }
-
-    .slide {
-      flex: 0 0 67%;
-      height: 610px;
-      scroll-snap-align: start;
-      overflow: hidden;
-      background: #ddd8d1;
-    }
-
-    .slide:nth-child(even) {
-      flex-basis: 48%;
-      height: 470px;
-      margin-top: 70px;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .5s ease;
-    }
-
-    .slide:hover img {
-      transform: scale(1.025);
-    }
-
-    .carousel-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 22px;
-    }
-
-    .carousel-hint {
-      font-family: Arial, sans-serif;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .carousel-buttons {
-      display: flex;
-      gap: 8px;
-    }
-
-    .carousel-button {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line);
-      background: transparent;
-      cursor: pointer;
-      font-family: Arial, sans-serif;
-      font-size: 17px;
-    }
-
-    .carousel-button:hover {
-      background: var(--dark);
-      color: var(--bg);
+      letter-spacing: -2.5px;
     }
 
 
@@ -379,16 +197,16 @@
        SERVICIOS
     ========================= */
 
-    .services-description {
-      max-width: 690px;
-      margin-top: 30px;
-      font-size: 19px;
-      color: #5d5751;
+    .services-intro {
+      max-width: 650px;
+      margin-top: 25px;
+      font-size: 18px;
+      color: #5c5650;
     }
 
     .packs {
-      margin-top: 65px;
       border-top: 1px solid var(--line);
+      margin-top: 65px;
     }
 
     details {
@@ -399,10 +217,10 @@
       list-style: none;
       cursor: pointer;
       display: grid;
-      grid-template-columns: 55px 1fr 35px;
-      align-items: center;
+      grid-template-columns: 55px 1fr 30px;
       gap: 20px;
-      padding: 31px 0;
+      align-items: center;
+      padding: 28px 0;
     }
 
     summary::-webkit-details-marker {
@@ -423,7 +241,7 @@
 
     .pack-plus {
       font-family: Arial, sans-serif;
-      font-size: 23px;
+      font-size: 22px;
       transition: transform .25s ease;
     }
 
@@ -433,23 +251,145 @@
 
     .pack-content {
       max-width: 720px;
-      padding: 0 0 42px 75px;
+      padding: 0 0 38px 75px;
+      font-size: 16px;
       color: #5d5751;
-      font-size: 17px;
     }
 
     .pack-content p {
-      margin-bottom: 23px;
+      margin-bottom: 20px;
     }
 
     .pack-link {
       display: inline-block;
       border-bottom: 1px solid var(--text);
-      padding-bottom: 5px;
+      padding-bottom: 4px;
       font-family: Arial, sans-serif;
       font-size: 9px;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.7px;
       text-transform: uppercase;
+    }
+
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio-intro {
+      max-width: 650px;
+      font-size: 18px;
+      color: #5d5751;
+      margin-top: 25px;
+    }
+
+    .project {
+      margin-top: 105px;
+    }
+
+    .project:first-of-type {
+      margin-top: 0;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .project-meta {
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: normal;
+      line-height: 1;
+    }
+
+    .project-description {
+      max-width: 420px;
+      font-size: 15px;
+      color: #625c55;
+      text-align: right;
+    }
+
+
+    /* =========================
+       GALERÍAS
+    ========================= */
+
+    .gallery {
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding: 5px 0 18px;
+      align-items: center;
+    }
+
+    .gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-item {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 78vw;
+      max-height: 650px;
+      scroll-snap-align: start;
+    }
+
+    .gallery-item img {
+      width: auto;
+      height: auto;
+      max-width: 78vw;
+      max-height: 650px;
+      object-fit: contain;
+    }
+
+    .gallery-note {
+      margin-top: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 8px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       MIRADA / TRAYECTORIA
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10vw;
+      align-items: start;
+    }
+
+    .about-large {
+      font-size: clamp(34px, 4.8vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .about-text {
+      max-width: 520px;
+      font-size: 18px;
+      color: #5d5751;
+    }
+
+    .about-text p + p {
+      margin-top: 24px;
     }
 
 
@@ -457,34 +397,26 @@
        CONTACTO
     ========================= */
 
-    .contact {
+    .contact-grid {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 10vw;
     }
 
-    .contact-copy h2 {
+    .contact-text {
+      max-width: 500px;
+      font-size: 18px;
+      color: #5d5751;
       margin-top: 25px;
     }
 
-    .contact-copy p {
-      max-width: 500px;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #5d5751;
-    }
-
-    form {
-      width: 100%;
-    }
-
     .field {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
       font-family: Arial, sans-serif;
       font-size: 9px;
       letter-spacing: 1.5px;
@@ -493,34 +425,34 @@
     }
 
     input,
-    textarea,
-    select {
+    select,
+    textarea {
       width: 100%;
       border: 0;
       border-bottom: 1px solid #bdb5ac;
       background: transparent;
-      padding: 11px 0;
       border-radius: 0;
+      padding: 10px 0;
       outline: none;
-      color: var(--text);
       font-family: Arial, sans-serif;
       font-size: 15px;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-bottom-color: var(--text);
+      color: var(--text);
     }
 
     textarea {
-      min-height: 125px;
+      min-height: 120px;
       resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-bottom-color: var(--text);
     }
 
     .submit {
       margin-top: 8px;
-      padding: 15px 27px;
+      padding: 14px 25px;
       border: 1px solid var(--text);
       background: transparent;
       cursor: pointer;
@@ -528,7 +460,6 @@
       font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      transition: all .25s ease;
     }
 
     .submit:hover {
@@ -538,7 +469,7 @@
 
 
     /* =========================
-       REDES
+       REDES / FOOTER
     ========================= */
 
     .social {
@@ -549,26 +480,21 @@
       display: flex;
       justify-content: center;
       gap: 35px;
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
     .social-links a {
       border-bottom: 1px solid var(--text);
-      padding-bottom: 5px;
+      padding-bottom: 4px;
       font-family: Arial, sans-serif;
       font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
       border-top: 1px solid var(--line);
-      padding: 30px 0;
+      padding: 28px 0;
     }
 
     .footer-inner {
@@ -597,7 +523,7 @@
       }
 
       .nav-links {
-        gap: 13px;
+        gap: 15px;
       }
 
       .nav-links a:nth-child(2) {
@@ -606,101 +532,74 @@
 
       header {
         min-height: auto;
-        padding: 100px 0 75px;
+        padding: 60px 0 90px;
       }
 
       .hero {
         display: flex;
         flex-direction: column;
-        gap: 45px;
+        gap: 42px;
+        align-items: stretch;
       }
 
-      .hero-image {
-        order: 1;
-        width: 100%;
+      .hero-photo {
+        max-width: 72%;
+        align-self: flex-start;
       }
 
       .hero-copy {
-        order: 2;
-        padding-left: 0;
-      }
-
-      .hero-image img {
-        height: 470px;
+        max-width: none;
       }
 
       h1 {
-        font-size: clamp(57px, 17vw, 90px);
+        font-size: clamp(55px, 16vw, 82px);
+      }
+
+      .hero-subtitle {
+        font-size: 34px;
       }
 
       section {
         padding: 85px 0;
       }
 
-      .section-intro {
+      .section-heading {
         display: block;
-        margin-bottom: 55px;
+        margin-bottom: 50px;
       }
 
       .section-label {
         margin-bottom: 22px;
       }
 
-      .statement {
-        font-size: clamp(40px, 12vw, 64px);
-      }
-
-      .statement-small {
-        margin-left: 0;
-        margin-top: 35px;
-      }
-
-      .project {
-        margin-top: 90px;
-      }
-
       .project-header {
         display: block;
-        margin-bottom: 25px;
       }
 
       .project-description {
         text-align: left;
-        margin-top: 20px;
+        margin-top: 17px;
       }
 
-      .slide {
-        flex-basis: 84%;
-        height: 500px;
+      .gallery-item,
+      .gallery-item img {
+        max-width: 86vw;
+        max-height: 520px;
       }
 
-      .slide:nth-child(even) {
-        flex-basis: 70%;
-        height: 410px;
-        margin-top: 50px;
-      }
-
-      .carousel-hint {
-        font-size: 8px;
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
       }
 
       summary {
         grid-template-columns: 38px 1fr 25px;
-        gap: 13px;
-        padding: 25px 0;
+        gap: 12px;
       }
 
       .pack-content {
-        padding: 0 0 32px 51px;
-        font-size: 16px;
-      }
-
-      .contact {
-        display: block;
-      }
-
-      .contact-copy {
-        margin-bottom: 60px;
+        padding-left: 50px;
       }
 
       .social-links {
@@ -733,8 +632,8 @@
       </div>
 
       <div class="nav-links">
-        <a href="#trabajo">Trabajo</a>
         <a href="#servicios">Servicios</a>
+        <a href="#trabajo">Trabajo</a>
         <a href="#contacto">Contacto</a>
       </div>
 
@@ -749,7 +648,7 @@
 
     <div class="container hero">
 
-      <div class="hero-image">
+      <div class="hero-photo">
 
         <img
           src="WhatsApp%20Image%202026-09-24%20at%2020.12.41.jpeg"
@@ -769,18 +668,18 @@
           Morbiducci
         </h1>
 
+        <div class="hero-subtitle">
+          Imágenes que cuentan historias.
+        </div>
+
         <p class="hero-description">
-          Desarrollo imágenes y contenido visual para marcas,
-          proyectos y personas que buscan comunicar con identidad.
+          Fotografía y contenido visual para marcas, proyectos
+          y personas que buscan comunicar con identidad.
         </p>
 
         <p class="location">
           Bahía Blanca · Argentina
         </p>
-
-        <a class="hero-cta" href="#trabajo">
-          Explorar el trabajo
-        </a>
 
       </div>
 
@@ -792,381 +691,13 @@
   <main>
 
 
-    <!-- PRESENTACIÓN -->
-
-    <section id="trabajo">
-
-      <div class="container">
-
-        <div class="section-intro">
-
-          <div class="section-label">
-            Sobre el trabajo
-          </div>
-
-          <div>
-
-            <h2>
-              Imágenes que construyen una narrativa.
-            </h2>
-
-            <p class="intro-text">
-              Trabajo desde la fotografía, la dirección visual y la
-              curaduría para construir imágenes que no solo muestran,
-              sino que también comunican una identidad.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="statement">
-          Una imagen también puede
-          construir una forma de mirar.
-        </div>
-
-        <p class="statement-small">
-          Cada proyecto parte de una búsqueda diferente:
-          encontrar una estética, ordenar una idea y convertirla
-          en una experiencia visual coherente.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROYECTOS -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="section-intro">
-
-          <div class="section-label">
-            Proyectos
-          </div>
-
-          <div>
-
-            <h2>
-              Tres formas de contar.
-            </h2>
-
-            <p class="intro-text">
-              Una selección de trabajos donde la fotografía funciona
-              como lenguaje y como herramienta para construir identidad.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- NUMA -->
-
-        <article class="project">
-
-          <div class="project-header">
-
-            <div>
-
-              <div class="project-number">
-                01 · Moda
-              </div>
-
-              <h3 class="project-title">
-                Numa
-              </h3>
-
-            </div>
-
-            <p class="project-description">
-              Imagen, presencia y narrativa para un universo de moda.
-            </p>
-
-          </div>
-
-
-          <div class="carousel">
-
-            <div class="carousel-track" id="numa-track">
-
-              <div class="slide">
-                <img
-                  src="numa.jpeg"
-                  alt="Numa — fotografía de moda"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="numa1.jpeg"
-                  alt="Numa — fotografía de moda"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="numa2.jpeg"
-                  alt="Numa — fotografía de moda"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="numa3.jpeg"
-                  alt="Numa — fotografía de moda"
-                  loading="lazy"
-                >
-              </div>
-
-            </div>
-
-            <div class="carousel-controls">
-
-              <div class="carousel-hint">
-                Deslizá para explorar
-              </div>
-
-              <div class="carousel-buttons">
-
-                <button
-                  class="carousel-button"
-                  onclick="scrollGallery('numa-track', -1)"
-                  aria-label="Imagen anterior"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="carousel-button"
-                  onclick="scrollGallery('numa-track', 1)"
-                  aria-label="Imagen siguiente"
-                >
-                  →
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- NANAMI -->
-
-        <article class="project">
-
-          <div class="project-header">
-
-            <div>
-
-              <div class="project-number">
-                02 · Cocina
-              </div>
-
-              <h3 class="project-title">
-                Nanami
-              </h3>
-
-            </div>
-
-            <p class="project-description">
-              Textura, detalle y sensibilidad alrededor de la cocina
-              y la pastelería.
-            </p>
-
-          </div>
-
-
-          <div class="carousel">
-
-            <div class="carousel-track" id="nanami-track">
-
-              <div class="slide">
-                <img
-                  src="nanami%20.jpeg"
-                  alt="Nanami — cocina y pastelería"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="nanami1.jpeg"
-                  alt="Nanami — cocina y pastelería"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="nanami2.jpeg"
-                  alt="Nanami — cocina y pastelería"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="nanami3.jpeg"
-                  alt="Nanami — cocina y pastelería"
-                  loading="lazy"
-                >
-              </div>
-
-            </div>
-
-            <div class="carousel-controls">
-
-              <div class="carousel-hint">
-                Deslizá para explorar
-              </div>
-
-              <div class="carousel-buttons">
-
-                <button
-                  class="carousel-button"
-                  onclick="scrollGallery('nanami-track', -1)"
-                  aria-label="Imagen anterior"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="carousel-button"
-                  onclick="scrollGallery('nanami-track', 1)"
-                  aria-label="Imagen siguiente"
-                >
-                  →
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- ARTE -->
-
-        <article class="project">
-
-          <div class="project-header">
-
-            <div>
-
-              <div class="project-number">
-                03 · Narrativa visual
-              </div>
-
-              <h3 class="project-title">
-                Arte
-              </h3>
-
-            </div>
-
-            <p class="project-description">
-              Una serie construida desde la imagen, la atmósfera
-              y la asociación de elementos.
-            </p>
-
-          </div>
-
-
-          <div class="carousel">
-
-            <div class="carousel-track" id="arte-track">
-
-              <div class="slide">
-                <img
-                  src="arte.jpeg"
-                  alt="Arte — narrativa visual"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="arte1.jpeg"
-                  alt="Arte — narrativa visual"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="arte2.jpeg"
-                  alt="Arte — narrativa visual"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="slide">
-                <img
-                  src="arte3%20.jpeg"
-                  alt="Arte — narrativa visual"
-                  loading="lazy"
-                >
-              </div>
-
-            </div>
-
-            <div class="carousel-controls">
-
-              <div class="carousel-hint">
-                Deslizá para explorar
-              </div>
-
-              <div class="carousel-buttons">
-
-                <button
-                  class="carousel-button"
-                  onclick="scrollGallery('arte-track', -1)"
-                  aria-label="Imagen anterior"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="carousel-button"
-                  onclick="scrollGallery('arte-track', 1)"
-                  aria-label="Imagen siguiente"
-                >
-                  →
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
     <!-- SERVICIOS -->
 
     <section id="servicios">
 
       <div class="container">
 
-        <div class="section-intro">
+        <div class="section-heading">
 
           <div class="section-label">
             Servicios
@@ -1179,10 +710,10 @@
               y potenciar tu comunicación.
             </h2>
 
-            <p class="services-description">
-              Cada marca necesita una mirada diferente. Podemos partir
-              de una estrategia integral, impulsar una marca que ya está
-              en movimiento o trabajar sobre necesidades puntuales.
+            <p class="services-intro">
+              Cada proyecto necesita una mirada diferente.
+              Elegí una propuesta o contame qué necesitás
+              y la pensamos juntas.
             </p>
 
           </div>
@@ -1197,17 +728,13 @@
 
             <summary>
 
-              <span class="pack-number">
-                01
-              </span>
+              <span class="pack-number">01</span>
 
               <span class="pack-name">
                 Pack Inicio
               </span>
 
-              <span class="pack-plus">
-                +
-              </span>
+              <span class="pack-plus">+</span>
 
             </summary>
 
@@ -1223,8 +750,7 @@
                 Incluye análisis de marca, público y competencia,
                 definición de identidad y concepto, dirección y curaduría
                 visual, estrategia de contenidos, contenido fotográfico
-                y una primera etapa de comunicación, publicidad y
-                programación.
+                y una primera etapa de comunicación, publicidad y programación.
               </p>
 
               <a href="#contacto" class="pack-link">
@@ -1240,17 +766,13 @@
 
             <summary>
 
-              <span class="pack-number">
-                02
-              </span>
+              <span class="pack-number">02</span>
 
               <span class="pack-name">
                 Pack Impulso
               </span>
 
-              <span class="pack-plus">
-                +
-              </span>
+              <span class="pack-plus">+</span>
 
             </summary>
 
@@ -1262,9 +784,9 @@
               </p>
 
               <p>
-                Trabajamos sobre el diagnóstico de la marca y su
-                comunicación, dirección visual, estrategia, creación
-                de contenido, publicidad digital, seguimiento y ajustes.
+                Trabajamos sobre diagnóstico, dirección visual,
+                estrategia, creación de contenido, publicidad digital,
+                seguimiento y ajustes.
               </p>
 
               <a href="#contacto" class="pack-link">
@@ -1280,26 +802,23 @@
 
             <summary>
 
-              <span class="pack-number">
-                03
-              </span>
+              <span class="pack-number">03</span>
 
               <span class="pack-name">
                 Propuesta personalizada
               </span>
 
-              <span class="pack-plus">
-                +
-              </span>
+              <span class="pack-plus">+</span>
 
             </summary>
 
             <div class="pack-content">
 
               <p>
-                No todas las marcas necesitan lo mismo. A partir de un
-                análisis de tu marca, comunicación y objetivos, desarrollo
-                una propuesta diseñada especialmente para tu proyecto.
+                No todas las marcas necesitan lo mismo.
+                A partir de tu marca, comunicación y objetivos,
+                desarrollo una propuesta especialmente pensada
+                para tu proyecto.
               </p>
 
               <a href="#contacto" class="pack-link">
@@ -1315,17 +834,13 @@
 
             <summary>
 
-              <span class="pack-number">
-                04
-              </span>
+              <span class="pack-number">04</span>
 
               <span class="pack-name">
                 Contenido con material existente
               </span>
 
-              <span class="pack-plus">
-                +
-              </span>
+              <span class="pack-plus">+</span>
 
             </summary>
 
@@ -1334,8 +849,8 @@
               <p>
                 Si ya tenés fotografías, videos o material de tu marca,
                 podemos trabajar a partir de ese contenido para darle
-                una nueva dirección, organizarlo y convertirlo en una
-                comunicación visual coherente.
+                una nueva dirección y convertirlo en una comunicación
+                visual coherente.
               </p>
 
               <a href="#contacto" class="pack-link">
@@ -1354,13 +869,300 @@
     </section>
 
 
+    <!-- PORTFOLIO -->
+
+    <section id="trabajo">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            Trabajo
+          </div>
+
+          <div>
+
+            <h2>
+              Una selección de historias visuales.
+            </h2>
+
+            <p class="portfolio-intro">
+              Moda, cocina y narrativa visual.
+              Cada proyecto tiene su propio lenguaje.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NUMA -->
+
+        <article class="project">
+
+          <div class="project-header">
+
+            <div>
+
+              <div class="project-meta">
+                01 · Moda
+              </div>
+
+              <h3>
+                Numa
+              </h3>
+
+            </div>
+
+            <p class="project-description">
+              Imagen y narrativa para un universo de moda.
+            </p>
+
+          </div>
+
+          <div class="gallery">
+
+            <div class="gallery-item">
+              <img
+                src="numa.jpeg"
+                alt="Numa — fotografía de moda"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="numa1.jpeg"
+                alt="Numa — fotografía de moda"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="numa2.jpeg"
+                alt="Numa — fotografía de moda"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="numa3.jpeg"
+                alt="Numa — fotografía de moda"
+                loading="lazy"
+              >
+            </div>
+
+          </div>
+
+          <div class="gallery-note">
+            Deslizá hacia el costado para ver la serie
+          </div>
+
+        </article>
+
+
+        <!-- NANAMI -->
+
+        <article class="project">
+
+          <div class="project-header">
+
+            <div>
+
+              <div class="project-meta">
+                02 · Cocina y pastelería
+              </div>
+
+              <h3>
+                Nanami
+              </h3>
+
+            </div>
+
+            <p class="project-description">
+              Textura, detalle y sensibilidad alrededor de la cocina.
+            </p>
+
+          </div>
+
+          <div class="gallery">
+
+            <div class="gallery-item">
+              <img
+                src="nanami%20.jpeg"
+                alt="Nanami — cocina y pastelería"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="nanami1.jpeg"
+                alt="Nanami — cocina y pastelería"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="nanami2.jpeg"
+                alt="Nanami — cocina y pastelería"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="nanami3.jpeg"
+                alt="Nanami — cocina y pastelería"
+                loading="lazy"
+              >
+            </div>
+
+          </div>
+
+          <div class="gallery-note">
+            Deslizá hacia el costado para ver la serie
+          </div>
+
+        </article>
+
+
+        <!-- ARTE -->
+
+        <article class="project">
+
+          <div class="project-header">
+
+            <div>
+
+              <div class="project-meta">
+                03 · Narrativa visual
+              </div>
+
+              <h3>
+                Arte
+              </h3>
+
+            </div>
+
+            <p class="project-description">
+              Una serie construida desde la atmósfera,
+              la imagen y la asociación de elementos.
+            </p>
+
+          </div>
+
+          <div class="gallery">
+
+            <div class="gallery-item">
+              <img
+                src="arte.jpeg"
+                alt="Arte — narrativa visual"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="arte1.jpeg"
+                alt="Arte — narrativa visual"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="arte2.jpeg"
+                alt="Arte — narrativa visual"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="arte3%20.jpeg"
+                alt="Arte — narrativa visual"
+                loading="lazy"
+              >
+            </div>
+
+          </div>
+
+          <div class="gallery-note">
+            Deslizá hacia el costado para ver la serie
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- MIRADA -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            Mirada
+          </div>
+
+          <div>
+            <h2>
+              La imagen como lenguaje.
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-large">
+            No se trata solo de mostrar.
+            Se trata de encontrar
+            una forma de contar.
+          </div>
+
+          <div class="about-text">
+
+            <p>
+              Desarrollo propuestas visuales desde la fotografía,
+              la dirección y la curaduría, buscando que cada imagen
+              tenga una intención y forme parte de un universo coherente.
+            </p>
+
+            <p>
+              Trabajo con marcas, proyectos y personas que quieren
+              construir una identidad visual propia y comunicar
+              desde un lugar auténtico.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
     <!-- CONTACTO -->
 
     <section id="contacto">
 
-      <div class="container contact">
+      <div class="container contact-grid">
 
-        <div class="contact-copy">
+        <div>
 
           <div class="section-label">
             Contacto
@@ -1370,9 +1172,9 @@
             Hablemos de tu proyecto.
           </h2>
 
-          <p>
-            Contame sobre tu marca, proyecto o idea y te respondo para
-            conversar sobre la propuesta más adecuada.
+          <p class="contact-text">
+            Contame sobre tu marca, proyecto o idea y te respondo
+            para conversar sobre la propuesta más adecuada.
           </p>
 
         </div>
@@ -1385,9 +1187,7 @@
 
           <div class="field">
 
-            <label for="nombre">
-              Nombre
-            </label>
+            <label for="nombre">Nombre</label>
 
             <input
               type="text"
@@ -1401,9 +1201,7 @@
 
           <div class="field">
 
-            <label for="apellido">
-              Apellido
-            </label>
+            <label for="apellido">Apellido</label>
 
             <input
               type="text"
@@ -1417,9 +1215,7 @@
 
           <div class="field">
 
-            <label for="email">
-              Email
-            </label>
+            <label for="email">Email</label>
 
             <input
               type="email"
@@ -1433,9 +1229,7 @@
 
           <div class="field">
 
-            <label for="telefono">
-              Teléfono
-            </label>
+            <label for="telefono">Teléfono</label>
 
             <input
               type="tel"
@@ -1484,9 +1278,7 @@
 
           <div class="field">
 
-            <label for="mensaje">
-              Mensaje
-            </label>
+            <label for="mensaje">Mensaje</label>
 
             <textarea
               id="mensaje"
@@ -1564,27 +1356,6 @@
     </div>
 
   </footer>
-
-
-  <script>
-
-    function scrollGallery(id, direction) {
-
-      const gallery = document.getElementById(id);
-
-      if (!gallery) return;
-
-      const amount = gallery.clientWidth * 0.72;
-
-      gallery.scrollBy({
-        left: amount * direction,
-        behavior: "smooth"
-      });
-
-    }
-
-  </script>
-
 
 </body>
 </html>
