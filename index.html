@@ -100,14 +100,14 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 9vw;
+      grid-template-columns: minmax(240px, 390px) 1fr;
+      gap: clamp(45px, 8vw, 110px);
       align-items: center;
     }
 
     .hero-photo {
-      max-width: 500px;
-      justify-self: end;
+      width: 100%;
+      max-width: 390px;
     }
 
     .hero-photo img {
@@ -116,7 +116,7 @@
     }
 
     .hero-copy {
-      max-width: 560px;
+      max-width: 650px;
     }
 
     .eyebrow {
@@ -125,33 +125,33 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(55px, 7.5vw, 100px);
+      font-size: clamp(50px, 7vw, 88px);
       font-weight: normal;
-      line-height: .88;
-      letter-spacing: -4px;
+      line-height: .9;
+      letter-spacing: -3px;
     }
 
     .hero-subtitle {
-      margin-top: 40px;
-      max-width: 500px;
-      font-size: clamp(28px, 4vw, 48px);
+      margin-top: 32px;
+      max-width: 560px;
+      font-size: clamp(27px, 3.7vw, 46px);
       line-height: 1.05;
-      letter-spacing: -1.5px;
+      letter-spacing: -1.2px;
     }
 
     .hero-description {
-      max-width: 470px;
-      margin-top: 30px;
+      max-width: 520px;
+      margin-top: 25px;
       font-size: 17px;
       color: #5c5650;
     }
 
     .location {
-      margin-top: 24px;
+      margin-top: 20px;
       font-family: Arial, sans-serif;
       font-size: 9px;
       letter-spacing: 2px;
@@ -161,32 +161,66 @@
 
 
     /* =========================
+       REDES VISIBLES
+    ========================= */
+
+    .quick-links {
+      margin-top: 32px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+      transition: border-color .2s ease;
+    }
+
+    .quick-links a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    .social-icon {
+      font-size: 16px;
+      line-height: 1;
+      font-family: Arial, sans-serif;
+    }
+
+
+    /* =========================
        SECCIONES
     ========================= */
 
     section {
-      padding: 110px 0;
+      padding: 105px 0;
       border-top: 1px solid var(--line);
     }
 
     .section-heading {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 60px;
-      margin-bottom: 65px;
+      margin-bottom: 58px;
     }
 
     .section-label {
+      display: block;
       font-family: Arial, sans-serif;
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--muted);
+      margin-bottom: 16px;
     }
 
     h2 {
       max-width: 850px;
-      font-size: clamp(38px, 5vw, 67px);
+      font-size: clamp(38px, 5vw, 66px);
       font-weight: normal;
       line-height: 1;
       letter-spacing: -2.5px;
@@ -199,14 +233,14 @@
 
     .services-intro {
       max-width: 650px;
-      margin-top: 25px;
+      margin-top: 22px;
       font-size: 18px;
       color: #5c5650;
     }
 
     .packs {
       border-top: 1px solid var(--line);
-      margin-top: 65px;
+      margin-top: 58px;
     }
 
     details {
@@ -279,11 +313,11 @@
       max-width: 650px;
       font-size: 18px;
       color: #5d5751;
-      margin-top: 25px;
+      margin-top: 22px;
     }
 
     .project {
-      margin-top: 105px;
+      margin-top: 100px;
     }
 
     .project:first-of-type {
@@ -341,9 +375,7 @@
 
     .gallery-item {
       flex: 0 0 auto;
-      width: auto;
       max-width: 78vw;
-      max-height: 650px;
       scroll-snap-align: start;
     }
 
@@ -366,7 +398,7 @@
 
 
     /* =========================
-       MIRADA / TRAYECTORIA
+       MIRADA
     ========================= */
 
     .about-grid {
@@ -407,7 +439,7 @@
       max-width: 500px;
       font-size: 18px;
       color: #5d5751;
-      margin-top: 25px;
+      margin-top: 22px;
     }
 
     .field {
@@ -469,7 +501,7 @@
 
 
     /* =========================
-       REDES / FOOTER
+       REDES FINALES
     ========================= */
 
     .social {
@@ -491,6 +523,11 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       border-top: 1px solid var(--line);
@@ -522,8 +559,12 @@
         padding: 20px 0;
       }
 
+      .nav-inner {
+        align-items: center;
+      }
+
       .nav-links {
-        gap: 15px;
+        gap: 14px;
       }
 
       .nav-links a:nth-child(2) {
@@ -532,80 +573,167 @@
 
       header {
         min-height: auto;
-        padding: 60px 0 90px;
+        padding: 45px 0 80px;
       }
 
+      /*
+        En celular la portada se mantiene horizontal:
+        foto a la izquierda + identidad a la derecha.
+      */
+
       .hero {
-        display: flex;
-        flex-direction: column;
-        gap: 42px;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 34% 1fr;
+        gap: 22px;
+        align-items: center;
       }
 
       .hero-photo {
-        max-width: 72%;
-        align-self: flex-start;
+        width: 100%;
+        max-width: 180px;
       }
 
       .hero-copy {
         max-width: none;
       }
 
+      .eyebrow {
+        font-size: 7px;
+        letter-spacing: 2px;
+        margin-bottom: 14px;
+      }
+
       h1 {
-        font-size: clamp(55px, 16vw, 82px);
+        font-size: clamp(31px, 9vw, 47px);
+        letter-spacing: -1.8px;
       }
 
       .hero-subtitle {
-        font-size: 34px;
+        margin-top: 18px;
+        font-size: clamp(20px, 5.5vw, 29px);
+        letter-spacing: -.7px;
+      }
+
+      .hero-description {
+        margin-top: 17px;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .location {
+        margin-top: 14px;
+        font-size: 7px;
+        letter-spacing: 1.5px;
+      }
+
+      .quick-links {
+        margin-top: 20px;
+        gap: 15px;
+      }
+
+      .quick-links a {
+        font-size: 7px;
+        letter-spacing: 1px;
+        gap: 5px;
+      }
+
+      .social-icon {
+        font-size: 13px;
       }
 
       section {
-        padding: 85px 0;
+        padding: 75px 0;
       }
 
+      /*
+        En móvil la etiqueta y el título forman
+        una sola columna y una sola lectura.
+      */
+
       .section-heading {
-        display: block;
-        margin-bottom: 50px;
+        margin-bottom: 45px;
       }
 
       .section-label {
-        margin-bottom: 22px;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: clamp(35px, 9vw, 50px);
+        line-height: 1.02;
+        letter-spacing: -1.7px;
+      }
+
+      .services-intro,
+      .portfolio-intro {
+        font-size: 16px;
+        margin-top: 18px;
+      }
+
+      .packs {
+        margin-top: 45px;
+      }
+
+      summary {
+        grid-template-columns: 32px 1fr 22px;
+        gap: 10px;
+        padding: 23px 0;
+      }
+
+      .pack-name {
+        font-size: 24px;
+      }
+
+      .pack-content {
+        padding: 0 0 30px 42px;
+        font-size: 15px;
+      }
+
+      .project {
+        margin-top: 75px;
       }
 
       .project-header {
         display: block;
+        margin-bottom: 24px;
       }
 
       .project-description {
         text-align: left;
-        margin-top: 17px;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .gallery {
+        gap: 15px;
       }
 
       .gallery-item,
       .gallery-item img {
-        max-width: 86vw;
+        max-width: 84vw;
         max-height: 520px;
       }
 
       .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 55px;
+        gap: 45px;
       }
 
-      summary {
-        grid-template-columns: 38px 1fr 25px;
-        gap: 12px;
+      .about-large {
+        font-size: 37px;
       }
 
-      .pack-content {
-        padding-left: 50px;
+      .about-text,
+      .contact-text {
+        font-size: 16px;
       }
 
       .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        flex-direction: row;
+        gap: 25px;
       }
 
       .footer-inner {
@@ -681,6 +809,28 @@
           Bahía Blanca · Argentina
         </p>
 
+        <div class="quick-links">
+
+          <a
+            href="https://www.instagram.com/mirna.photos/"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="social-icon">◎</span>
+            Instagram
+          </a>
+
+          <a
+            href="https://www.behance.net/mirnamorbiducci"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="social-icon">Bē</span>
+            Behance
+          </a>
+
+        </div>
+
       </div>
 
     </div>
@@ -699,24 +849,20 @@
 
         <div class="section-heading">
 
-          <div class="section-label">
+          <span class="section-label">
             Servicios
-          </div>
+          </span>
 
-          <div>
+          <h2>
+            Propuestas para construir
+            y potenciar tu comunicación.
+          </h2>
 
-            <h2>
-              Propuestas para construir
-              y potenciar tu comunicación.
-            </h2>
-
-            <p class="services-intro">
-              Cada proyecto necesita una mirada diferente.
-              Elegí una propuesta o contame qué necesitás
-              y la pensamos juntas.
-            </p>
-
-          </div>
+          <p class="services-intro">
+            Cada proyecto necesita una mirada diferente.
+            Elegí una propuesta o contame qué necesitás
+            y la pensamos juntas.
+          </p>
 
         </div>
 
@@ -877,22 +1023,18 @@
 
         <div class="section-heading">
 
-          <div class="section-label">
+          <span class="section-label">
             Trabajo
-          </div>
+          </span>
 
-          <div>
+          <h2>
+            Una selección de historias visuales.
+          </h2>
 
-            <h2>
-              Una selección de historias visuales.
-            </h2>
-
-            <p class="portfolio-intro">
-              Moda, cocina y narrativa visual.
-              Cada proyecto tiene su propio lenguaje.
-            </p>
-
-          </div>
+          <p class="portfolio-intro">
+            Moda, cocina y narrativa visual.
+            Cada proyecto tiene su propio lenguaje.
+          </p>
 
         </div>
 
@@ -1112,15 +1254,13 @@
 
         <div class="section-heading">
 
-          <div class="section-label">
+          <span class="section-label">
             Mirada
-          </div>
+          </span>
 
-          <div>
-            <h2>
-              La imagen como lenguaje.
-            </h2>
-          </div>
+          <h2>
+            La imagen como lenguaje.
+          </h2>
 
         </div>
 
@@ -1164,9 +1304,9 @@
 
         <div>
 
-          <div class="section-label">
+          <span class="section-label">
             Contacto
-          </div>
+          </span>
 
           <h2>
             Hablemos de tu proyecto.
@@ -1278,7 +1418,9 @@
 
           <div class="field">
 
-            <label for="mensaje">Mensaje</label>
+            <label for="mensaje">
+              Mensaje
+            </label>
 
             <textarea
               id="mensaje"
@@ -1309,9 +1451,9 @@
 
       <div class="container">
 
-        <div class="section-label">
-          También podés encontrarme en
-        </div>
+        <span class="section-label">
+          Encontrame también en
+        </span>
 
         <div class="social-links">
 
@@ -1356,6 +1498,7 @@
     </div>
 
   </footer>
+
 
 </body>
 </html>
