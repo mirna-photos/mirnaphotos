@@ -3,3 +3,4 @@ Allow: /
 
 User-agent: *
 Allow: /
+Sitemap: https://mirna-photos.github.io/mirnaphotos/sitemap.xml
