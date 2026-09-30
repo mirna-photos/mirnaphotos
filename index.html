@@ -21,857 +21,899 @@
 
 <style>
 
-  :root {
-    --bg: #f5f2ea;
-    --bg-panel: #ebe5da;
-    --ink: #161412;
-    --body: #514c44;
-    --muted: #8b8478;
-    --line: #d9d3c5;
+:root {
+  --bg: #f5f2ea;
+  --bg-panel: #ebe5da;
+  --ink: #161412;
+  --body: #514c44;
+  --muted: #8b8478;
+  --line: #d9d3c5;
 
-    --font-display: "Archivo", Arial, sans-serif;
-    --font-editorial: "Fraunces", Georgia, serif;
+  --font-display: "Archivo", Arial, sans-serif;
+  --font-editorial: "Fraunces", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
   * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1180px, 88%);
+  margin: 0 auto;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 26px 0;
+  background: linear-gradient(var(--bg) 65%, transparent);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .02em;
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--body);
+}
+
+.nav-links a {
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+header {
+  padding: 65px 0 95px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(230px, 330px) minmax(0, 620px);
+  gap: clamp(40px, 6vw, 75px);
+  align-items: stretch;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.hero-photo {
+  aspect-ratio: 3 / 5;
+  overflow: hidden;
+  background: var(--bg);
+  animation: reveal .8s ease both;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-copy > * {
+  animation: reveal .8s ease both;
+}
+
+.hero-copy .eyebrow {
+  animation-delay: .05s;
+}
+
+h1 {
+  animation-delay: .1s;
+}
+
+.hero-subtitle {
+  animation-delay: .18s;
+}
+
+.hero-description {
+  animation-delay: .26s;
+}
+
+.location {
+  animation-delay: .32s;
+}
+
+.quick-links {
+  animation-delay: .38s;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 
-  html {
-    scroll-behavior: smooth;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+.eyebrow {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 420;
+  font-size: 16px;
+  color: var(--body);
+  margin-bottom: 18px;
+}
 
-    * {
-      animation-duration: .001ms !important;
-      transition-duration: .001ms !important;
-    }
-  }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: .95;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
 
-  body {
-    background: var(--bg);
-    color: var(--body);
-    font-family: var(--font-editorial);
-    font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+.hero-subtitle {
+  margin-top: 24px;
+  max-width: 520px;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 420;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.15;
+  color: var(--ink);
+}
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+.hero-description {
+  max-width: 460px;
+  margin-top: 20px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--body);
+}
 
-  img {
-    display: block;
-    max-width: 100%;
-  }
+.location {
+  margin-top: 20px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
 
-  :focus-visible {
-    outline: 1.5px solid var(--ink);
-    outline-offset: 4px;
-  }
+.quick-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 26px;
+}
+
+.quick-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+}
+
+.quick-links svg {
+  display: block;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+  padding: 100px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  margin-bottom: 54px;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 420;
+  font-size: 16px;
+  color: var(--body);
+  margin-bottom: 16px;
+}
+
+h2 {
+  max-width: 760px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -.5px;
+  color: var(--ink);
+}
+
+.services-intro,
+.portfolio-intro {
+  max-width: 520px;
+  margin-top: 20px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--body);
+}
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+#servicios {
+  background: var(--bg-panel);
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.services-layout .section-heading {
+  margin-bottom: 0;
+}
+
+.packs {
+  border-top: 1px solid var(--line);
+  margin-top: 0;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 2px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.pack-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 25px);
+  color: var(--ink);
+}
+
+.pack-plus {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--ink);
+  transition: transform .3s ease;
+}
+
+details[open] .pack-plus {
+  transform: rotate(135deg);
+}
+
+.pack-content {
+  max-width: 660px;
+  padding: 0 2px 30px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--body);
+}
+
+.pack-content p {
+  margin-bottom: 18px;
+}
+
+.pack-link {
+  display: inline-block;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+#trabajo {
+  background: var(--bg);
+}
+
+.project {
+  position: relative;
+  margin-top: 95px;
+  padding: 35px 0;
+}
+
+.project:first-of-type {
+  margin-top: 0;
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--bg);
+}
+
+.project:nth-of-type(2)::before {
+  background: var(--bg-panel);
+}
+
+.project:nth-of-type(3)::before {
+  background: var(--bg);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 36px;
+  margin-bottom: 30px;
+}
+
+.project-meta {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--body);
+  border: 1px solid var(--line);
+  padding: 5px 13px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(26px, 3.4vw, 42px);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.project-description {
+  max-width: 360px;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--body);
+  text-align: right;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px 0 16px;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 64vw;
+  max-width: 340px;
+  aspect-ratio: 4 / 5;
+  scroll-snap-align: start;
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-note {
+  margin-top: 14px;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* =========================
+   MIRADA
+   SE MANTIENE EN SU COLOR
+========================= */
+
+#trabajo + section {
+  background: var(--bg-panel);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.about-large {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 420;
+  font-size: clamp(26px, 3.4vw, 44px);
+  line-height: 1.22;
+  color: var(--ink);
+}
+
+.about-text {
+  max-width: 460px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--body);
+}
+
+.about-text p + p {
+  margin-top: 20px;
+}
+
+
+/* =========================
+   CONTACTO
+   BEIGE MUY CLARO GENERAL
+========================= */
+
+#contacto {
+  background: var(--bg);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 8vw;
+}
+
+.contact-text {
+  max-width: 440px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--body);
+  margin-top: 20px;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: .03em;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 10px 0;
+  outline: none;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-bottom-color: var(--ink);
+}
+
+.submit {
+  margin-top: 8px;
+  padding: 14px 28px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .03em;
+  color: var(--ink);
+  transition: background .2s ease, color .2s ease;
+}
+
+.submit:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+
+/* =========================
+   REDES
+========================= */
+
+.social {
+  text-align: center;
+  background: var(--bg);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  margin-top: 24px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  background: var(--bg);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.ig-icon {
+  flex: 0 0 auto;
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 750px) {
 
   .container {
-    width: min(1180px, 88%);
-    margin: 0 auto;
-  }
-
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    padding: 26px 0;
-    background: linear-gradient(var(--bg) 65%, transparent);
-  }
-
-  .nav-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .brand {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: .02em;
-    color: var(--ink);
+    width: 88%;
   }
 
   .nav-links {
-    display: flex;
-    gap: 32px;
-    font-family: var(--font-display);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--body);
+    gap: 16px;
+    font-size: 12px;
   }
-
-  .nav-links a {
-    border-bottom: 1px solid transparent;
-    padding-bottom: 3px;
-    transition: border-color .2s ease, color .2s ease;
-  }
-
-  .nav-links a:hover {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
-  }
-
-
-  /* =========================
-     PORTADA
-  ========================= */
 
   header {
-    padding: 65px 0 95px;
-    background: var(--bg-panel);
-    border-bottom: 1px solid var(--line);
+    padding: 45px 0 70px;
   }
 
   .hero {
-    display: grid;
-    grid-template-columns: minmax(230px, 330px) minmax(0, 620px);
-    gap: clamp(40px, 6vw, 75px);
+    grid-template-columns: 34% minmax(0, 1fr);
+    gap: 18px;
     align-items: stretch;
-    max-width: 1050px;
-    margin: 0 auto;
+    width: 100%;
   }
 
   .hero-photo {
-    aspect-ratio: 3 / 5;
-    overflow: hidden;
-    background: var(--bg);
-    animation: reveal .8s ease both;
+    aspect-ratio: auto;
+    height: 510px;
   }
 
   .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     object-position: center;
   }
 
   .hero-copy {
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-copy > * {
-    animation: reveal .8s ease both;
-  }
-
-  .hero-copy .eyebrow {
-    animation-delay: .05s;
-  }
-
-  h1 {
-    animation-delay: .1s;
-  }
-
-  .hero-subtitle {
-    animation-delay: .18s;
-  }
-
-  .hero-description {
-    animation-delay: .26s;
-  }
-
-  .location {
-    animation-delay: .32s;
-  }
-
-  .quick-links {
-    animation-delay: .38s;
-  }
-
-  @keyframes reveal {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    padding: 4px 0;
   }
 
   .eyebrow {
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-weight: 420;
-    font-size: 16px;
-    color: var(--body);
-    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.35;
+    margin-bottom: 15px;
   }
 
   h1 {
-    font-family: var(--font-display);
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: clamp(38px, 6vw, 76px);
+    font-size: clamp(27px, 8vw, 40px);
     line-height: .95;
     letter-spacing: -1px;
-    color: var(--ink);
   }
 
   .hero-subtitle {
-    margin-top: 24px;
-    max-width: 520px;
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-weight: 420;
-    font-size: clamp(22px, 3vw, 34px);
+    margin-top: 16px;
+    font-size: clamp(19px, 5.3vw, 25px);
     line-height: 1.15;
-    color: var(--ink);
   }
 
   .hero-description {
-    max-width: 460px;
-    margin-top: 20px;
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--body);
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .location {
-    margin-top: 20px;
-    font-family: var(--font-display);
-    font-size: 13px;
-    letter-spacing: .04em;
-    color: var(--muted);
+    margin-top: 12px;
+    font-size: 10.5px;
   }
 
   .quick-links {
-    margin-top: 30px;
-    display: flex;
-    gap: 26px;
+    margin-top: 19px;
+    gap: 14px;
+    flex-wrap: wrap;
   }
 
   .quick-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-display);
-    font-size: 13px;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 4px;
+    font-size: 11px;
   }
-
-  .quick-links svg {
-    display: block;
-  }
-
-
-  /* =========================
-     SECCIONES
-  ========================= */
 
   section {
-    padding: 100px 0;
-    border-top: 1px solid var(--line);
+    padding: 70px 0;
   }
 
-  /* Separación visual sutil entre bloques */
-  #servicios {
-    background: #ebe5da;
-  }
-
-  #trabajo {
-    background: var(--bg);
-  }
-
-  #trabajo + section {
-    background: #ebe5da;
-  }
-
-  #contacto {
-    background: #ebe5da;
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
   }
 
   .section-heading {
-    margin-bottom: 54px;
+    margin-bottom: 40px;
   }
 
-  .section-label {
-    display: block;
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-weight: 420;
-    font-size: 16px;
-    color: var(--body);
-    margin-bottom: 16px;
+  .services-layout .section-heading {
+    margin-bottom: 0;
   }
 
   h2 {
-    max-width: 760px;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.05;
-    letter-spacing: -.5px;
-    color: var(--ink);
+    font-size: clamp(26px, 8vw, 36px);
   }
 
   .services-intro,
   .portfolio-intro {
-    max-width: 520px;
-    margin-top: 20px;
-    font-family: var(--font-display);
-    font-size: 16px;
-    color: var(--body);
-  }
-
-
-  /* =========================
-     SERVICIOS
-  ========================= */
-
-  .packs {
-    border-top: 1px solid var(--line);
-    margin-top: 50px;
-  }
-
-  details {
-    border-bottom: 1px solid var(--line);
+    font-size: 14px;
   }
 
   summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding: 30px 2px;
-  }
-
-  summary::-webkit-details-marker {
-    display: none;
+    padding: 22px 0;
+    gap: 12px;
   }
 
   .pack-name {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(20px, 2.4vw, 28px);
-    color: var(--ink);
-  }
-
-  .pack-plus {
-    flex: 0 0 auto;
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--ink);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 17px;
-    color: var(--ink);
-    transition: transform .3s ease;
-  }
-
-  details[open] .pack-plus {
-    transform: rotate(135deg);
+    font-size: 18px;
   }
 
   .pack-content {
-    max-width: 660px;
-    padding: 0 2px 38px;
-    font-family: var(--font-display);
-    font-size: 15px;
-    color: var(--body);
+    padding: 0 0 28px;
+    font-size: 14px;
   }
-
-  .pack-content p {
-    margin-bottom: 18px;
-  }
-
-  .pack-link {
-    display: inline-block;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 4px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 13px;
-    color: var(--ink);
-  }
-
-
-  /* =========================
-     PORTFOLIO
-  ========================= */
 
   .project {
-    margin-top: 95px;
-  }
-
-  .project:first-of-type {
-    margin-top: 0;
+    margin-top: 65px;
+    padding: 25px 0;
   }
 
   .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 36px;
-    margin-bottom: 30px;
-  }
-
-  .project-meta {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: .04em;
-    color: var(--body);
-    border: 1px solid var(--line);
-    padding: 5px 13px;
-    border-radius: 999px;
-    margin-bottom: 14px;
-  }
-
-  h3 {
-    font-family: var(--font-display);
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: clamp(26px, 3.4vw, 42px);
-    color: var(--ink);
-    line-height: 1;
+    display: block;
+    margin-bottom: 20px;
   }
 
   .project-description {
-    max-width: 360px;
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-size: 16px;
-    color: var(--body);
-    text-align: right;
-  }
-
-  .gallery {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 4px 0 16px;
-  }
-
-  .gallery::-webkit-scrollbar {
-    display: none;
+    text-align: left;
+    margin-top: 12px;
+    font-size: 14px;
   }
 
   .gallery-item {
-    flex: 0 0 auto;
-    width: 64vw;
-    max-width: 340px;
-    aspect-ratio: 4 / 5;
-    scroll-snap-align: start;
-    background: var(--bg-panel);
-    overflow: hidden;
+    width: 78vw;
+    max-width: none;
   }
 
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .gallery-note {
-    margin-top: 14px;
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-size: 14px;
-    color: var(--muted);
-  }
-
-
-  /* =========================
-     MIRADA
-  ========================= */
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 8vw;
-    align-items: start;
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
   }
 
   .about-large {
-    font-family: var(--font-editorial);
-    font-style: italic;
-    font-weight: 420;
-    font-size: clamp(26px, 3.4vw, 44px);
-    line-height: 1.22;
-    color: var(--ink);
+    font-size: 24px;
   }
 
-  .about-text {
-    max-width: 460px;
-    font-family: var(--font-display);
-    font-size: 16px;
-    color: var(--body);
-  }
-
-  .about-text p + p {
-    margin-top: 20px;
-  }
-
-
-  /* =========================
-     CONTACTO
-  ========================= */
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 8vw;
-  }
-
+  .about-text,
   .contact-text {
-    max-width: 440px;
-    font-family: var(--font-display);
-    font-size: 16px;
-    color: var(--body);
-    margin-top: 20px;
-  }
-
-  .field {
-    margin-bottom: 24px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--font-display);
-    font-size: 12px;
-    letter-spacing: .03em;
-    color: var(--muted);
-  }
-
-  input,
-  select,
-  textarea {
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid var(--line);
-    background: transparent;
-    padding: 10px 0;
-    outline: none;
-    font-family: var(--font-display);
-    font-size: 15px;
-    color: var(--ink);
-  }
-
-  textarea {
-    min-height: 105px;
-    resize: vertical;
-  }
-
-  input:focus,
-  select:focus,
-  textarea:focus {
-    border-bottom-color: var(--ink);
-  }
-
-  .submit {
-    margin-top: 8px;
-    padding: 14px 28px;
-    border: 1.5px solid var(--ink);
-    background: transparent;
-    cursor: pointer;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: .03em;
-    color: var(--ink);
-    transition: background .2s ease, color .2s ease;
-  }
-
-  .submit:hover {
-    background: var(--ink);
-    color: var(--bg);
-  }
-
-
-  /* =========================
-     REDES
-  ========================= */
-
-  .social {
-    text-align: center;
-  }
-
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 34px;
-    margin-top: 24px;
-  }
-
-  .social-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 4px;
-    font-family: var(--font-display);
-    font-size: 13px;
-    color: var(--ink);
-  }
-
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 28px 0;
+    font-size: 14px;
   }
 
   .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--font-display);
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+
+/* =========================
+   MOBILE PEQUEÑO
+========================= */
+
+@media (max-width: 430px) {
+
+  .nav-links {
+    gap: 13px;
     font-size: 11px;
-    color: var(--muted);
   }
 
-  .ig-icon {
-    flex: 0 0 auto;
+  .brand {
+    font-size: 14px;
+    max-width: 105px;
+    line-height: 1.15;
   }
 
-
-  /* =========================
-     TABLET / MOBILE
-  ========================= */
-
-  @media (max-width: 750px) {
-
-    .container {
-      width: 88%;
-    }
-
-    .nav-links {
-      gap: 16px;
-      font-size: 12px;
-    }
-
-    header {
-      padding: 45px 0 70px;
-    }
-
-    /*
-      En celular mantenemos la composición:
-      foto vertical a la izquierda + texto a la derecha.
-      El ancho del texto queda contenido para evitar
-      que se vaya fuera de la pantalla.
-    */
-
-    .hero {
-      grid-template-columns: 34% minmax(0, 1fr);
-      gap: 18px;
-      align-items: stretch;
-      width: 100%;
-    }
-
-    .hero-photo {
-      aspect-ratio: auto;
-      height: 510px;
-    }
-
-    .hero-photo img {
-      object-position: center;
-    }
-
-    .hero-copy {
-      min-width: 0;
-      padding: 4px 0;
-    }
-
-    .eyebrow {
-      font-size: 14px;
-      line-height: 1.35;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(27px, 8vw, 40px);
-      line-height: .95;
-      letter-spacing: -1px;
-      overflow-wrap: normal;
-      word-break: normal;
-    }
-
-    .hero-subtitle {
-      margin-top: 16px;
-      font-size: clamp(19px, 5.3vw, 25px);
-      line-height: 1.15;
-    }
-
-    .hero-description {
-      margin-top: 14px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .location {
-      margin-top: 12px;
-      font-size: 10.5px;
-    }
-
-    .quick-links {
-      margin-top: 19px;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .quick-links a {
-      font-size: 11px;
-    }
-
-    section {
-      padding: 70px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      font-size: clamp(26px, 8vw, 36px);
-    }
-
-    .services-intro,
-    .portfolio-intro {
-      font-size: 14px;
-    }
-
-    summary {
-      padding: 22px 0;
-      gap: 12px;
-    }
-
-    .pack-name {
-      font-size: 18px;
-    }
-
-    .pack-content {
-      padding: 0 0 28px;
-      font-size: 14px;
-    }
-
-    .project {
-      margin-top: 65px;
-    }
-
-    .project-header {
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .project-description {
-      text-align: left;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    .gallery-item {
-      width: 78vw;
-      max-width: none;
-    }
-
-    .about-grid,
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 38px;
-    }
-
-    .about-large {
-      font-size: 24px;
-    }
-
-    .about-text,
-    .contact-text {
-      font-size: 14px;
-    }
-
-    .footer-inner {
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-    }
+  header {
+    padding-top: 42px;
   }
 
-
-  /* =========================
-     MOBILE PEQUEÑO
-  ========================= */
-
-  @media (max-width: 430px) {
-
-    .nav-links {
-      gap: 13px;
-      font-size: 11px;
-    }
-
-    .brand {
-      font-size: 14px;
-      max-width: 105px;
-      line-height: 1.15;
-    }
-
-    header {
-      padding-top: 42px;
-    }
-
-    .hero {
-      grid-template-columns: 33% minmax(0, 1fr);
-      gap: 16px;
-    }
-
-    .hero-photo {
-      height: 485px;
-    }
-
-    .eyebrow {
-      font-size: 13px;
-    }
-
-    h1 {
-      font-size: clamp(26px, 7.8vw, 36px);
-    }
-
-    .hero-subtitle {
-      font-size: 19px;
-    }
-
-    .hero-description {
-      font-size: 12.5px;
-    }
-
-    .location {
-      font-size: 10px;
-    }
-
-    .quick-links {
-      gap: 11px;
-    }
-
-    .quick-links a {
-      font-size: 10.5px;
-    }
+  .hero {
+    grid-template-columns: 33% minmax(0, 1fr);
+    gap: 16px;
   }
+
+  .hero-photo {
+    height: 485px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 7.8vw, 36px);
+  }
+
+  .hero-subtitle {
+    font-size: 19px;
+  }
+
+  .hero-description {
+    font-size: 12.5px;
+  }
+
+  .location {
+    font-size: 10px;
+  }
+
+  .quick-links {
+    gap: 11px;
+  }
+
+  .quick-links a {
+    font-size: 10.5px;
+  }
+}
 
 </style>
 </head>
@@ -880,161 +922,275 @@
 
 <nav>
   <div class="container nav-inner">
-    <a href="#" class="brand">MIRNA MORBIDUCCI</a>
+
+    <a href="#" class="brand">
+      MIRNA MORBIDUCCI
+    </a>
+
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#trabajo">Trabajo</a>
       <a href="#contacto">Contacto</a>
     </div>
+
   </div>
 </nav>
 
+
 <header>
+
   <div class="container hero">
 
     <div class="hero-photo">
-      <img src="MirnaM.jpg" alt="Mirna Morbiducci" fetchpriority="high">
+      <img
+        src="MirnaM.jpg"
+        alt="Mirna Morbiducci"
+        fetchpriority="high"
+      >
     </div>
 
     <div class="hero-copy">
-      <p class="eyebrow">Fotografía, dirección visual y narrativa</p>
 
-      <h1>Mirna Morbiducci</h1>
+      <p class="eyebrow">
+        Fotografía, dirección visual y narrativa
+      </p>
 
-      <p class="hero-subtitle">Imágenes que cuentan historias.</p>
+      <h1>
+        Mirna Morbiducci
+      </h1>
+
+      <p class="hero-subtitle">
+        Imágenes que cuentan historias.
+      </p>
 
       <p class="hero-description">
         Fotografía y contenido visual para marcas, proyectos
         y personas que buscan comunicar con identidad.
       </p>
 
-      <p class="location">Bahía Blanca, Argentina</p>
+      <p class="location">
+        Bahía Blanca, Argentina
+      </p>
 
       <div class="quick-links">
-        <a href="https://www.instagram.com/mirna.photos/" target="_blank" rel="noopener">
-          <svg class="ig-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6">
+
+        <a
+          href="https://www.instagram.com/mirna.photos/"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <svg
+            class="ig-icon"
+            viewBox="0 0 24 24"
+            width="19"
+            height="19"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
             <rect x="3" y="3" width="18" height="18" rx="5"/>
             <circle cx="12" cy="12" r="4.2"/>
-            <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/>
+            <circle
+              cx="17.3"
+              cy="6.7"
+              r="0.6"
+              fill="currentColor"
+              stroke="none"
+            />
           </svg>
+
           Instagram
+
         </a>
 
-        <a href="https://www.behance.net/mirnamorbiducci" target="_blank" rel="noopener">
+        <a
+          href="https://www.behance.net/mirnamorbiducci"
+          target="_blank"
+          rel="noopener"
+        >
           Behance
         </a>
+
       </div>
+
     </div>
 
   </div>
+
 </header>
+
 
 <main>
 
+
+  <!-- =========================
+       SERVICIOS
+  ========================= -->
+
   <section id="servicios">
+
     <div class="container">
 
-      <div class="section-heading">
-        <span class="section-label">Servicios</span>
+      <div class="services-layout">
 
-        <h2>
-          Propuestas para construir y potenciar tu comunicación.
-        </h2>
+        <div class="section-heading">
 
-        <p class="services-intro">
-          Cada proyecto necesita una mirada diferente.
-          Elegí una propuesta o contame qué necesitás y la pensamos juntas.
-        </p>
+          <span class="section-label">
+            Servicios
+          </span>
+
+          <h2>
+            Propuestas para construir y potenciar tu comunicación.
+          </h2>
+
+          <p class="services-intro">
+            Cada proyecto necesita una mirada diferente.
+            Elegí una propuesta o contame qué necesitás y la pensamos juntas.
+          </p>
+
+        </div>
+
+
+        <div class="packs">
+
+          <details>
+
+            <summary>
+              <span class="pack-name">
+                Pack Inicio
+              </span>
+
+              <span class="pack-plus">
+                +
+              </span>
+            </summary>
+
+            <div class="pack-content">
+
+              <p>
+                Una propuesta para marcas y emprendimientos que necesitan construir una base estratégica y visual para comenzar a comunicar con identidad.
+              </p>
+
+              <p>
+                Incluye análisis de marca, público y competencia, definición de identidad y concepto, dirección y curaduría visual, estrategia de contenidos, contenido fotográfico y una primera etapa de comunicación, publicidad y programación.
+              </p>
+
+              <a href="#contacto" class="pack-link">
+                Solicitar asesoramiento
+              </a>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              <span class="pack-name">
+                Pack Impulso
+              </span>
+
+              <span class="pack-plus">
+                +
+              </span>
+            </summary>
+
+            <div class="pack-content">
+
+              <p>
+                Pensado para marcas con recorrido que necesitan renovar, ordenar y potenciar su comunicación.
+              </p>
+
+              <p>
+                Trabajamos sobre diagnóstico, dirección visual, estrategia, creación de contenido, publicidad digital, seguimiento y ajustes.
+              </p>
+
+              <a href="#contacto" class="pack-link">
+                Solicitar asesoramiento
+              </a>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              <span class="pack-name">
+                Propuesta personalizada
+              </span>
+
+              <span class="pack-plus">
+                +
+              </span>
+            </summary>
+
+            <div class="pack-content">
+
+              <p>
+                No todas las marcas necesitan lo mismo. A partir de tu marca, comunicación y objetivos, desarrollo una propuesta especialmente pensada para tu proyecto.
+              </p>
+
+              <a href="#contacto" class="pack-link">
+                Solicitar asesoramiento
+              </a>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              <span class="pack-name">
+                Contenido con material existente
+              </span>
+
+              <span class="pack-plus">
+                +
+              </span>
+            </summary>
+
+            <div class="pack-content">
+
+              <p>
+                Si ya tenés fotografías, videos o material de tu marca, podemos trabajar a partir de ese contenido para darle una nueva dirección y convertirlo en una comunicación visual coherente.
+              </p>
+
+              <a href="#contacto" class="pack-link">
+                Solicitar asesoramiento
+              </a>
+
+            </div>
+
+          </details>
+
+        </div>
+
       </div>
 
-      <div class="packs">
-
-        <details>
-          <summary>
-            <span class="pack-name">Pack Inicio</span>
-            <span class="pack-plus">+</span>
-          </summary>
-
-          <div class="pack-content">
-            <p>
-              Una propuesta para marcas y emprendimientos que necesitan construir una base estratégica y visual para comenzar a comunicar con identidad.
-            </p>
-
-            <p>
-              Incluye análisis de marca, público y competencia, definición de identidad y concepto, dirección y curaduría visual, estrategia de contenidos, contenido fotográfico y una primera etapa de comunicación, publicidad y programación.
-            </p>
-
-            <a href="#contacto" class="pack-link">
-              Solicitar asesoramiento
-            </a>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <span class="pack-name">Pack Impulso</span>
-            <span class="pack-plus">+</span>
-          </summary>
-
-          <div class="pack-content">
-            <p>
-              Pensado para marcas con recorrido que necesitan renovar, ordenar y potenciar su comunicación.
-            </p>
-
-            <p>
-              Trabajamos sobre diagnóstico, dirección visual, estrategia, creación de contenido, publicidad digital, seguimiento y ajustes.
-            </p>
-
-            <a href="#contacto" class="pack-link">
-              Solicitar asesoramiento
-            </a>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <span class="pack-name">Propuesta personalizada</span>
-            <span class="pack-plus">+</span>
-          </summary>
-
-          <div class="pack-content">
-            <p>
-              No todas las marcas necesitan lo mismo. A partir de tu marca, comunicación y objetivos, desarrollo una propuesta especialmente pensada para tu proyecto.
-            </p>
-
-            <a href="#contacto" class="pack-link">
-              Solicitar asesoramiento
-            </a>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <span class="pack-name">Contenido con material existente</span>
-            <span class="pack-plus">+</span>
-          </summary>
-
-          <div class="pack-content">
-            <p>
-              Si ya tenés fotografías, videos o material de tu marca, podemos trabajar a partir de ese contenido para darle una nueva dirección y convertirlo en una comunicación visual coherente.
-            </p>
-
-            <a href="#contacto" class="pack-link">
-              Solicitar asesoramiento
-            </a>
-          </div>
-        </details>
-
-      </div>
     </div>
+
   </section>
 
 
+  <!-- =========================
+       TRABAJO
+  ========================= -->
+
   <section id="trabajo">
+
     <div class="container">
 
       <div class="section-heading">
-        <span class="section-label">Trabajo</span>
+
+        <span class="section-label">
+          Trabajo
+        </span>
 
         <h2>
           Una selección de historias visuales.
@@ -1043,16 +1199,26 @@
         <p class="portfolio-intro">
           Moda, cocina y narrativa visual. Cada proyecto tiene su propio lenguaje.
         </p>
+
       </div>
 
+
+      <!-- NUMA -->
 
       <article class="project">
 
         <div class="project-header">
 
           <div>
-            <span class="project-meta">Moda</span>
-            <h3>Numa</h3>
+
+            <span class="project-meta">
+              Moda
+            </span>
+
+            <h3>
+              Numa
+            </h3>
+
           </div>
 
           <p class="project-description">
@@ -1061,22 +1227,39 @@
 
         </div>
 
+
         <div class="gallery">
 
           <div class="gallery-item">
-            <img src="numa.png" alt="Numa — fotografía de moda" loading="lazy">
+            <img
+              src="numa.png"
+              alt="Numa — fotografía de moda"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="numa1.jpeg" alt="Numa — fotografía de moda" loading="lazy">
+            <img
+              src="numa1.jpeg"
+              alt="Numa — fotografía de moda"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="numa2.png" alt="Numa — fotografía de moda" loading="lazy">
+            <img
+              src="numa2.png"
+              alt="Numa — fotografía de moda"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="numa3.png" alt="Numa — fotografía de moda" loading="lazy">
+            <img
+              src="numa3.png"
+              alt="Numa — fotografía de moda"
+              loading="lazy"
+            >
           </div>
 
         </div>
@@ -1088,13 +1271,22 @@
       </article>
 
 
+      <!-- NANAMI -->
+
       <article class="project">
 
         <div class="project-header">
 
           <div>
-            <span class="project-meta">Cocina y pastelería</span>
-            <h3>Nanami</h3>
+
+            <span class="project-meta">
+              Cocina y pastelería
+            </span>
+
+            <h3>
+              Nanami
+            </h3>
+
           </div>
 
           <p class="project-description">
@@ -1103,22 +1295,39 @@
 
         </div>
 
+
         <div class="gallery">
 
           <div class="gallery-item">
-            <img src="nanami%20.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+            <img
+              src="nanami%20.jpeg"
+              alt="Nanami — cocina y pastelería"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="nanami1.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+            <img
+              src="nanami1.jpeg"
+              alt="Nanami — cocina y pastelería"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="nanami2.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+            <img
+              src="nanami2.jpeg"
+              alt="Nanami — cocina y pastelería"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="nanami3.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+            <img
+              src="nanami3.jpeg"
+              alt="Nanami — cocina y pastelería"
+              loading="lazy"
+            >
           </div>
 
         </div>
@@ -1130,13 +1339,22 @@
       </article>
 
 
+      <!-- ARTE -->
+
       <article class="project">
 
         <div class="project-header">
 
           <div>
-            <span class="project-meta">Narrativa visual</span>
-            <h3>Arte</h3>
+
+            <span class="project-meta">
+              Narrativa visual
+            </span>
+
+            <h3>
+              Arte
+            </h3>
+
           </div>
 
           <p class="project-description">
@@ -1145,22 +1363,39 @@
 
         </div>
 
+
         <div class="gallery">
 
           <div class="gallery-item">
-            <img src="arte.jpeg" alt="Arte — narrativa visual" loading="lazy">
+            <img
+              src="arte.jpeg"
+              alt="Arte — narrativa visual"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="arte1.jpeg" alt="Arte — narrativa visual" loading="lazy">
+            <img
+              src="arte1.jpeg"
+              alt="Arte — narrativa visual"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="arte2.jpeg" alt="Arte — narrativa visual" loading="lazy">
+            <img
+              src="arte2.jpeg"
+              alt="Arte — narrativa visual"
+              loading="lazy"
+            >
           </div>
 
           <div class="gallery-item">
-            <img src="arte3%20.jpeg" alt="Arte — narrativa visual" loading="lazy">
+            <img
+              src="arte3%20.jpeg"
+              alt="Arte — narrativa visual"
+              loading="lazy"
+            >
           </div>
 
         </div>
@@ -1172,27 +1407,40 @@
       </article>
 
     </div>
+
   </section>
 
+
+  <!-- =========================
+       MIRADA
+  ========================= -->
 
   <section>
 
     <div class="container">
 
       <div class="section-heading">
-        <span class="section-label">Mirada</span>
+
+        <span class="section-label">
+          Mirada
+        </span>
 
         <h2>
           La imagen como lenguaje.
         </h2>
+
       </div>
+
 
       <div class="about-grid">
 
         <div class="about-large">
+
           No se trata solo de mostrar.
           Se trata de encontrar una forma de contar.
+
         </div>
+
 
         <div class="about-text">
 
@@ -1212,6 +1460,10 @@
 
   </section>
 
+
+  <!-- =========================
+       CONTACTO
+  ========================= -->
 
   <section id="contacto">
 
@@ -1234,47 +1486,129 @@
       </div>
 
 
-      <form action="https://formspree.io/f/mnpnzgov" method="POST">
+      <form
+        action="https://formspree.io/f/mnpnzgov"
+        method="POST"
+      >
 
         <div class="field">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="nombre">
+            Nombre
+          </label>
+
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+          >
+
         </div>
 
+
         <div class="field">
-          <label for="apellido">Apellido</label>
-          <input type="text" id="apellido" name="apellido" required>
+
+          <label for="apellido">
+            Apellido
+          </label>
+
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            required
+          >
+
         </div>
 
+
         <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
+
         </div>
 
+
         <div class="field">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono">
+
+          <label for="telefono">
+            Teléfono
+          </label>
+
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+          >
+
         </div>
 
-        <div class="field">
-          <label for="servicio">Servicio de interés</label>
 
-          <select id="servicio" name="servicio">
-            <option value="">Seleccionar</option>
-            <option value="Pack Inicio">Pack Inicio</option>
-            <option value="Pack Impulso">Pack Impulso</option>
-            <option value="Propuesta personalizada">Propuesta personalizada</option>
-            <option value="Contenido con material existente">Contenido con material existente</option>
+        <div class="field">
+
+          <label for="servicio">
+            Servicio de interés
+          </label>
+
+          <select
+            id="servicio"
+            name="servicio"
+          >
+
+            <option value="">
+              Seleccionar
+            </option>
+
+            <option value="Pack Inicio">
+              Pack Inicio
+            </option>
+
+            <option value="Pack Impulso">
+              Pack Impulso
+            </option>
+
+            <option value="Propuesta personalizada">
+              Propuesta personalizada
+            </option>
+
+            <option value="Contenido con material existente">
+              Contenido con material existente
+            </option>
+
           </select>
 
         </div>
 
+
         <div class="field">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
+
+          <label for="mensaje">
+            Mensaje
+          </label>
+
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            required
+          ></textarea>
+
         </div>
 
-        <button type="submit" class="submit">
+
+        <button
+          type="submit"
+          class="submit"
+        >
           Enviar consulta
         </button>
 
@@ -1285,6 +1619,10 @@
   </section>
 
 
+  <!-- =========================
+       REDES
+  ========================= -->
+
   <section class="social">
 
     <div class="container">
@@ -1293,21 +1631,58 @@
         Encontrame también en
       </span>
 
+
       <div class="social-links">
 
-        <a href="https://www.instagram.com/mirna.photos/" target="_blank" rel="noopener">
+        <a
+          href="https://www.instagram.com/mirna.photos/"
+          target="_blank"
+          rel="noopener"
+        >
 
-          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <circle cx="12" cy="12" r="4.2"/>
-            <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/>
+          <svg
+            viewBox="0 0 24 24"
+            width="17"
+            height="17"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"
+            />
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4.2"
+            />
+
+            <circle
+              cx="17.3"
+              cy="6.7"
+              r="0.6"
+              fill="currentColor"
+              stroke="none"
+            />
+
           </svg>
 
           Instagram
 
         </a>
 
-        <a href="https://www.behance.net/mirnamorbiducci" target="_blank" rel="noopener">
+
+        <a
+          href="https://www.behance.net/mirnamorbiducci"
+          target="_blank"
+          rel="noopener"
+        >
           Behance
         </a>
 
