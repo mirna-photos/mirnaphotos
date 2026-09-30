@@ -12,7 +12,7 @@
 
 <meta property="og:title" content="Mirna Morbiducci | Fotografía y Narrativa Visual">
 <meta property="og:description" content="Fotografía, dirección visual y narrativa para marcas y proyectos.">
-<meta property="og:image" content="WhatsApp%20Image%202026-09-24%20at%2020.12.41.jpeg">
+<meta property="og:image" content="MirnaM.jpg">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
 
   :root {
     --bg: #f5f2ea;
-    --bg-panel: #ece7db;
+    --bg-panel: #ebe5da;
     --ink: #161412;
     --body: #514c44;
     --muted: #8b8478;
@@ -33,12 +33,25 @@
     --font-editorial: "Fraunces", Georgia, serif;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    html {
+      scroll-behavior: auto;
+    }
+
+    * {
+      animation-duration: .001ms !important;
+      transition-duration: .001ms !important;
+    }
   }
 
   body {
@@ -48,22 +61,42 @@
     font-weight: 400;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-  :focus-visible { outline: 1.5px solid var(--ink); outline-offset: 4px; }
+  img {
+    display: block;
+    max-width: 100%;
+  }
 
-  .container { width: min(1180px, 88%); margin: 0 auto; }
+  :focus-visible {
+    outline: 1.5px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  .container {
+    width: min(1180px, 88%);
+    margin: 0 auto;
+  }
 
   nav {
-    position: sticky; top: 0; z-index: 20;
+    position: sticky;
+    top: 0;
+    z-index: 20;
     padding: 26px 0;
     background: linear-gradient(var(--bg) 65%, transparent);
   }
 
-  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .brand {
     font-family: var(--font-display);
@@ -74,7 +107,8 @@
   }
 
   .nav-links {
-    display: flex; gap: 32px;
+    display: flex;
+    gap: 32px;
     font-family: var(--font-display);
     font-size: 13px;
     font-weight: 500;
@@ -87,39 +121,90 @@
     transition: border-color .2s ease, color .2s ease;
   }
 
-  .nav-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .nav-links a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
 
-  header { padding: 46px 0 100px; }
+
+  /* =========================
+     PORTADA
+  ========================= */
+
+  header {
+    padding: 65px 0 95px;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--line);
+  }
 
   .hero {
     display: grid;
-    grid-template-columns: minmax(190px, 260px) minmax(0, 620px);
-    gap: clamp(40px, 6vw, 80px);
-    align-items: center;
-    max-width: 960px;
+    grid-template-columns: minmax(230px, 330px) minmax(0, 620px);
+    gap: clamp(40px, 6vw, 75px);
+    align-items: stretch;
+    max-width: 1050px;
     margin: 0 auto;
   }
 
   .hero-photo {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 5;
     overflow: hidden;
-    background: var(--bg-panel);
+    background: var(--bg);
     animation: reveal .8s ease both;
   }
 
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
-  .hero-copy > * { animation: reveal .8s ease both; }
-  .hero-copy .eyebrow { animation-delay: .05s; }
-  h1 { animation-delay: .1s; }
-  .hero-subtitle { animation-delay: .18s; }
-  .hero-description { animation-delay: .26s; }
-  .location { animation-delay: .32s; }
-  .quick-links { animation-delay: .38s; }
+  .hero-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-copy > * {
+    animation: reveal .8s ease both;
+  }
+
+  .hero-copy .eyebrow {
+    animation-delay: .05s;
+  }
+
+  h1 {
+    animation-delay: .1s;
+  }
+
+  .hero-subtitle {
+    animation-delay: .18s;
+  }
+
+  .hero-description {
+    animation-delay: .26s;
+  }
+
+  .location {
+    animation-delay: .32s;
+  }
+
+  .quick-links {
+    animation-delay: .38s;
+  }
 
   @keyframes reveal {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .eyebrow {
@@ -169,21 +254,56 @@
     color: var(--muted);
   }
 
-  .quick-links { margin-top: 30px; display: flex; gap: 26px; }
+  .quick-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 26px;
+  }
 
   .quick-links a {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: var(--font-display);
     font-size: 13px;
     border-bottom: 1px solid var(--ink);
     padding-bottom: 4px;
   }
 
-  .quick-links svg { display: block; }
+  .quick-links svg {
+    display: block;
+  }
 
-  section { padding: 100px 0; border-top: 1px solid var(--line); }
 
-  .section-heading { margin-bottom: 54px; }
+  /* =========================
+     SECCIONES
+  ========================= */
+
+  section {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Separación visual sutil entre bloques */
+  #servicios {
+    background: #ebe5da;
+  }
+
+  #trabajo {
+    background: var(--bg);
+  }
+
+  #trabajo + section {
+    background: #ebe5da;
+  }
+
+  #contacto {
+    background: #ebe5da;
+  }
+
+  .section-heading {
+    margin-bottom: 54px;
+  }
 
   .section-label {
     display: block;
@@ -205,7 +325,8 @@
     color: var(--ink);
   }
 
-  .services-intro, .portfolio-intro {
+  .services-intro,
+  .portfolio-intro {
     max-width: 520px;
     margin-top: 20px;
     font-family: var(--font-display);
@@ -213,16 +334,33 @@
     color: var(--body);
   }
 
-  .packs { border-top: 1px solid var(--line); margin-top: 50px; }
-  details { border-bottom: 1px solid var(--line); }
 
-  summary {
-    list-style: none; cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 20px; padding: 30px 2px;
+  /* =========================
+     SERVICIOS
+  ========================= */
+
+  .packs {
+    border-top: 1px solid var(--line);
+    margin-top: 50px;
   }
 
-  summary::-webkit-details-marker { display: none; }
+  details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 2px;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
 
   .pack-name {
     font-family: var(--font-display);
@@ -232,22 +370,35 @@
   }
 
   .pack-plus {
-    flex: 0 0 auto; width: 32px; height: 32px;
-    border: 1.5px solid var(--ink); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 17px; color: var(--ink);
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--ink);
     transition: transform .3s ease;
   }
 
-  details[open] .pack-plus { transform: rotate(135deg); }
-
-  .pack-content {
-    max-width: 660px; padding: 0 2px 38px;
-    font-family: var(--font-display);
-    font-size: 15px; color: var(--body);
+  details[open] .pack-plus {
+    transform: rotate(135deg);
   }
 
-  .pack-content p { margin-bottom: 18px; }
+  .pack-content {
+    max-width: 660px;
+    padding: 0 2px 38px;
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--body);
+  }
+
+  .pack-content p {
+    margin-bottom: 18px;
+  }
 
   .pack-link {
     display: inline-block;
@@ -259,12 +410,25 @@
     color: var(--ink);
   }
 
-  .project { margin-top: 95px; }
-  .project:first-of-type { margin-top: 0; }
+
+  /* =========================
+     PORTFOLIO
+  ========================= */
+
+  .project {
+    margin-top: 95px;
+  }
+
+  .project:first-of-type {
+    margin-top: 0;
+  }
 
   .project-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    gap: 36px; margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 36px;
+    margin-bottom: 30px;
   }
 
   .project-meta {
@@ -299,12 +463,17 @@
   }
 
   .gallery {
-    display: flex; gap: 20px; overflow-x: auto;
-    scroll-snap-type: x mandatory; scrollbar-width: none;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     padding: 4px 0 16px;
   }
 
-  .gallery::-webkit-scrollbar { display: none; }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
 
   .gallery-item {
     flex: 0 0 auto;
@@ -316,7 +485,11 @@
     overflow: hidden;
   }
 
-  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .gallery-note {
     margin-top: 14px;
@@ -326,7 +499,17 @@
     color: var(--muted);
   }
 
-  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 8vw; align-items: start; }
+
+  /* =========================
+     MIRADA
+  ========================= */
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 8vw;
+    align-items: start;
+  }
 
   .about-large {
     font-family: var(--font-editorial);
@@ -337,98 +520,357 @@
     color: var(--ink);
   }
 
-  .about-text { max-width: 460px; font-family: var(--font-display); font-size: 16px; color: var(--body); }
-  .about-text p + p { margin-top: 20px; }
+  .about-text {
+    max-width: 460px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    color: var(--body);
+  }
 
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 8vw; }
+  .about-text p + p {
+    margin-top: 20px;
+  }
+
+
+  /* =========================
+     CONTACTO
+  ========================= */
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 8vw;
+  }
 
   .contact-text {
     max-width: 440px;
     font-family: var(--font-display);
-    font-size: 16px; color: var(--body); margin-top: 20px;
+    font-size: 16px;
+    color: var(--body);
+    margin-top: 20px;
   }
 
-  .field { margin-bottom: 24px; }
+  .field {
+    margin-bottom: 24px;
+  }
 
   label {
-    display: block; margin-bottom: 8px;
+    display: block;
+    margin-bottom: 8px;
     font-family: var(--font-display);
-    font-size: 12px; letter-spacing: .03em; color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .03em;
+    color: var(--muted);
   }
 
-  input, select, textarea {
-    width: 100%; border: 0; border-bottom: 1px solid var(--line);
-    background: transparent; padding: 10px 0; outline: none;
-    font-family: var(--font-display); font-size: 15px; color: var(--ink);
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    padding: 10px 0;
+    outline: none;
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
   }
 
-  textarea { min-height: 105px; resize: vertical; }
-  input:focus, select:focus, textarea:focus { border-bottom-color: var(--ink); }
+  textarea {
+    min-height: 105px;
+    resize: vertical;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-bottom-color: var(--ink);
+  }
 
   .submit {
-    margin-top: 8px; padding: 14px 28px;
-    border: 1.5px solid var(--ink); background: transparent; cursor: pointer;
-    font-family: var(--font-display); font-weight: 600; font-size: 13px;
-    letter-spacing: .03em; color: var(--ink);
+    margin-top: 8px;
+    padding: 14px 28px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .03em;
+    color: var(--ink);
     transition: background .2s ease, color .2s ease;
   }
 
-  .submit:hover { background: var(--ink); color: var(--bg); }
+  .submit:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
 
-  .social { text-align: center; }
 
-  .social-links { display: flex; justify-content: center; gap: 34px; margin-top: 24px; }
+  /* =========================
+     REDES
+  ========================= */
+
+  .social {
+    text-align: center;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+    margin-top: 24px;
+  }
 
   .social-links a {
-    display: inline-flex; align-items: center; gap: 8px;
-    border-bottom: 1px solid var(--ink); padding-bottom: 4px;
-    font-family: var(--font-display); font-size: 13px; color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--ink);
   }
 
-  footer { border-top: 1px solid var(--line); padding: 28px 0; }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+  }
 
   .footer-inner {
-    display: flex; justify-content: space-between;
-    font-family: var(--font-display); font-size: 11px; color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 11px;
+    color: var(--muted);
   }
 
-  .ig-icon { flex: 0 0 auto; }
+  .ig-icon {
+    flex: 0 0 auto;
+  }
+
+
+  /* =========================
+     TABLET / MOBILE
+  ========================= */
 
   @media (max-width: 750px) {
-    .container { width: 88%; }
-    .nav-links { gap: 16px; font-size: 12px; }
-    header { padding: 32px 0 70px; }
 
-    .hero { grid-template-columns: 32% 1fr; gap: 18px; align-items: center; }
-    .hero-photo { aspect-ratio: 3/4; }
+    .container {
+      width: 88%;
+    }
 
-    h1 { font-size: clamp(28px, 9vw, 42px); }
-    .hero-subtitle { margin-top: 16px; font-size: clamp(19px, 5.5vw, 25px); }
-    .hero-description { margin-top: 14px; font-size: 14px; }
-    .location { margin-top: 12px; font-size: 11px; }
-    .quick-links { margin-top: 20px; gap: 16px; flex-wrap: wrap; }
-    .quick-links a { font-size: 12px; }
+    .nav-links {
+      gap: 16px;
+      font-size: 12px;
+    }
 
-    section { padding: 70px 0; }
-    .section-heading { margin-bottom: 40px; }
-    h2 { font-size: clamp(26px, 8vw, 36px); }
-    .services-intro, .portfolio-intro { font-size: 14px; }
+    header {
+      padding: 45px 0 70px;
+    }
 
-    summary { padding: 22px 0; gap: 12px; }
-    .pack-name { font-size: 18px; }
-    .pack-content { padding: 0 0 28px; font-size: 14px; }
+    /*
+      En celular mantenemos la composición:
+      foto vertical a la izquierda + texto a la derecha.
+      El ancho del texto queda contenido para evitar
+      que se vaya fuera de la pantalla.
+    */
 
-    .project { margin-top: 65px; }
-    .project-header { display: block; margin-bottom: 20px; }
-    .project-description { text-align: left; margin-top: 12px; font-size: 14px; }
+    .hero {
+      grid-template-columns: 34% minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      width: 100%;
+    }
 
-    .gallery-item { width: 78vw; max-width: none; }
+    .hero-photo {
+      aspect-ratio: auto;
+      height: 510px;
+    }
 
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 38px; }
-    .about-large { font-size: 24px; }
-    .about-text, .contact-text { font-size: 14px; }
+    .hero-photo img {
+      object-position: center;
+    }
 
-    .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+    .hero-copy {
+      min-width: 0;
+      padding: 4px 0;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      line-height: 1.35;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(27px, 8vw, 40px);
+      line-height: .95;
+      letter-spacing: -1px;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    .hero-subtitle {
+      margin-top: 16px;
+      font-size: clamp(19px, 5.3vw, 25px);
+      line-height: 1.15;
+    }
+
+    .hero-description {
+      margin-top: 14px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .location {
+      margin-top: 12px;
+      font-size: 10.5px;
+    }
+
+    .quick-links {
+      margin-top: 19px;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .quick-links a {
+      font-size: 11px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: clamp(26px, 8vw, 36px);
+    }
+
+    .services-intro,
+    .portfolio-intro {
+      font-size: 14px;
+    }
+
+    summary {
+      padding: 22px 0;
+      gap: 12px;
+    }
+
+    .pack-name {
+      font-size: 18px;
+    }
+
+    .pack-content {
+      padding: 0 0 28px;
+      font-size: 14px;
+    }
+
+    .project {
+      margin-top: 65px;
+    }
+
+    .project-header {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .project-description {
+      text-align: left;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .gallery-item {
+      width: 78vw;
+      max-width: none;
+    }
+
+    .about-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    .about-large {
+      font-size: 24px;
+    }
+
+    .about-text,
+    .contact-text {
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+
+
+  /* =========================
+     MOBILE PEQUEÑO
+  ========================= */
+
+  @media (max-width: 430px) {
+
+    .nav-links {
+      gap: 13px;
+      font-size: 11px;
+    }
+
+    .brand {
+      font-size: 14px;
+      max-width: 105px;
+      line-height: 1.15;
+    }
+
+    header {
+      padding-top: 42px;
+    }
+
+    .hero {
+      grid-template-columns: 33% minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .hero-photo {
+      height: 485px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 7.8vw, 36px);
+    }
+
+    .hero-subtitle {
+      font-size: 19px;
+    }
+
+    .hero-description {
+      font-size: 12.5px;
+    }
+
+    .location {
+      font-size: 10px;
+    }
+
+    .quick-links {
+      gap: 11px;
+    }
+
+    .quick-links a {
+      font-size: 10.5px;
+    }
   }
 
 </style>
@@ -451,17 +893,21 @@
   <div class="container hero">
 
     <div class="hero-photo">
-      <img src="WhatsApp%20Image%202026-09-24%20at%2020.12.41.jpeg" alt="Mirna Morbiducci" fetchpriority="high">
+      <img src="MirnaM.jpg" alt="Mirna Morbiducci" fetchpriority="high">
     </div>
 
     <div class="hero-copy">
       <p class="eyebrow">Fotografía, dirección visual y narrativa</p>
+
       <h1>Mirna Morbiducci</h1>
+
       <p class="hero-subtitle">Imágenes que cuentan historias.</p>
+
       <p class="hero-description">
         Fotografía y contenido visual para marcas, proyectos
         y personas que buscan comunicar con identidad.
       </p>
+
       <p class="location">Bahía Blanca, Argentina</p>
 
       <div class="quick-links">
@@ -473,7 +919,10 @@
           </svg>
           Instagram
         </a>
-        <a href="https://www.behance.net/mirnamorbiducci" target="_blank" rel="noopener">Behance</a>
+
+        <a href="https://www.behance.net/mirnamorbiducci" target="_blank" rel="noopener">
+          Behance
+        </a>
       </div>
     </div>
 
@@ -484,9 +933,14 @@
 
   <section id="servicios">
     <div class="container">
+
       <div class="section-heading">
         <span class="section-label">Servicios</span>
-        <h2>Propuestas para construir y potenciar tu comunicación.</h2>
+
+        <h2>
+          Propuestas para construir y potenciar tu comunicación.
+        </h2>
+
         <p class="services-intro">
           Cada proyecto necesita una mirada diferente.
           Elegí una propuesta o contame qué necesitás y la pensamos juntas.
@@ -496,151 +950,289 @@
       <div class="packs">
 
         <details>
-          <summary><span class="pack-name">Pack Inicio</span><span class="pack-plus">+</span></summary>
+          <summary>
+            <span class="pack-name">Pack Inicio</span>
+            <span class="pack-plus">+</span>
+          </summary>
+
           <div class="pack-content">
-            <p>Una propuesta para marcas y emprendimientos que necesitan construir una base estratégica y visual para comenzar a comunicar con identidad.</p>
-            <p>Incluye análisis de marca, público y competencia, definición de identidad y concepto, dirección y curaduría visual, estrategia de contenidos, contenido fotográfico y una primera etapa de comunicación, publicidad y programación.</p>
-            <a href="#contacto" class="pack-link">Solicitar asesoramiento</a>
+            <p>
+              Una propuesta para marcas y emprendimientos que necesitan construir una base estratégica y visual para comenzar a comunicar con identidad.
+            </p>
+
+            <p>
+              Incluye análisis de marca, público y competencia, definición de identidad y concepto, dirección y curaduría visual, estrategia de contenidos, contenido fotográfico y una primera etapa de comunicación, publicidad y programación.
+            </p>
+
+            <a href="#contacto" class="pack-link">
+              Solicitar asesoramiento
+            </a>
           </div>
         </details>
 
         <details>
-          <summary><span class="pack-name">Pack Impulso</span><span class="pack-plus">+</span></summary>
+          <summary>
+            <span class="pack-name">Pack Impulso</span>
+            <span class="pack-plus">+</span>
+          </summary>
+
           <div class="pack-content">
-            <p>Pensado para marcas con recorrido que necesitan renovar, ordenar y potenciar su comunicación.</p>
-            <p>Trabajamos sobre diagnóstico, dirección visual, estrategia, creación de contenido, publicidad digital, seguimiento y ajustes.</p>
-            <a href="#contacto" class="pack-link">Solicitar asesoramiento</a>
+            <p>
+              Pensado para marcas con recorrido que necesitan renovar, ordenar y potenciar su comunicación.
+            </p>
+
+            <p>
+              Trabajamos sobre diagnóstico, dirección visual, estrategia, creación de contenido, publicidad digital, seguimiento y ajustes.
+            </p>
+
+            <a href="#contacto" class="pack-link">
+              Solicitar asesoramiento
+            </a>
           </div>
         </details>
 
         <details>
-          <summary><span class="pack-name">Propuesta personalizada</span><span class="pack-plus">+</span></summary>
+          <summary>
+            <span class="pack-name">Propuesta personalizada</span>
+            <span class="pack-plus">+</span>
+          </summary>
+
           <div class="pack-content">
-            <p>No todas las marcas necesitan lo mismo. A partir de tu marca, comunicación y objetivos, desarrollo una propuesta especialmente pensada para tu proyecto.</p>
-            <a href="#contacto" class="pack-link">Solicitar asesoramiento</a>
+            <p>
+              No todas las marcas necesitan lo mismo. A partir de tu marca, comunicación y objetivos, desarrollo una propuesta especialmente pensada para tu proyecto.
+            </p>
+
+            <a href="#contacto" class="pack-link">
+              Solicitar asesoramiento
+            </a>
           </div>
         </details>
 
         <details>
-          <summary><span class="pack-name">Contenido con material existente</span><span class="pack-plus">+</span></summary>
+          <summary>
+            <span class="pack-name">Contenido con material existente</span>
+            <span class="pack-plus">+</span>
+          </summary>
+
           <div class="pack-content">
-            <p>Si ya tenés fotografías, videos o material de tu marca, podemos trabajar a partir de ese contenido para darle una nueva dirección y convertirlo en una comunicación visual coherente.</p>
-            <a href="#contacto" class="pack-link">Solicitar asesoramiento</a>
+            <p>
+              Si ya tenés fotografías, videos o material de tu marca, podemos trabajar a partir de ese contenido para darle una nueva dirección y convertirlo en una comunicación visual coherente.
+            </p>
+
+            <a href="#contacto" class="pack-link">
+              Solicitar asesoramiento
+            </a>
           </div>
         </details>
 
       </div>
     </div>
   </section>
+
 
   <section id="trabajo">
     <div class="container">
 
       <div class="section-heading">
         <span class="section-label">Trabajo</span>
-        <h2>Una selección de historias visuales.</h2>
-        <p class="portfolio-intro">Moda, cocina y narrativa visual. Cada proyecto tiene su propio lenguaje.</p>
+
+        <h2>
+          Una selección de historias visuales.
+        </h2>
+
+        <p class="portfolio-intro">
+          Moda, cocina y narrativa visual. Cada proyecto tiene su propio lenguaje.
+        </p>
       </div>
 
+
       <article class="project">
+
         <div class="project-header">
+
           <div>
             <span class="project-meta">Moda</span>
             <h3>Numa</h3>
           </div>
-          <p class="project-description">Imagen y narrativa para un universo de moda.</p>
+
+          <p class="project-description">
+            Imagen y narrativa para un universo de moda.
+          </p>
+
         </div>
 
         <div class="gallery">
+
           <div class="gallery-item">
             <img src="numa.png" alt="Numa — fotografía de moda" loading="lazy">
           </div>
+
           <div class="gallery-item">
             <img src="numa1.jpeg" alt="Numa — fotografía de moda" loading="lazy">
           </div>
+
           <div class="gallery-item">
             <img src="numa2.png" alt="Numa — fotografía de moda" loading="lazy">
           </div>
+
           <div class="gallery-item">
             <img src="numa3.png" alt="Numa — fotografía de moda" loading="lazy">
           </div>
+
         </div>
 
-        <div class="gallery-note">Deslizá hacia el costado para ver la serie</div>
+        <div class="gallery-note">
+          Deslizá hacia el costado para ver la serie
+        </div>
+
       </article>
 
+
       <article class="project">
+
         <div class="project-header">
+
           <div>
             <span class="project-meta">Cocina y pastelería</span>
             <h3>Nanami</h3>
           </div>
-          <p class="project-description">Textura, detalle y sensibilidad alrededor de la cocina.</p>
+
+          <p class="project-description">
+            Textura, detalle y sensibilidad alrededor de la cocina.
+          </p>
+
         </div>
 
         <div class="gallery">
-          <div class="gallery-item"><img src="nanami%20.jpeg" alt="Nanami — cocina y pastelería" loading="lazy"></div>
-          <div class="gallery-item"><img src="nanami1.jpeg" alt="Nanami — cocina y pastelería" loading="lazy"></div>
-          <div class="gallery-item"><img src="nanami2.jpeg" alt="Nanami — cocina y pastelería" loading="lazy"></div>
-          <div class="gallery-item"><img src="nanami3.jpeg" alt="Nanami — cocina y pastelería" loading="lazy"></div>
+
+          <div class="gallery-item">
+            <img src="nanami%20.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="nanami1.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="nanami2.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="nanami3.jpeg" alt="Nanami — cocina y pastelería" loading="lazy">
+          </div>
+
         </div>
 
-        <div class="gallery-note">Deslizá hacia el costado para ver la serie</div>
+        <div class="gallery-note">
+          Deslizá hacia el costado para ver la serie
+        </div>
+
       </article>
 
+
       <article class="project">
+
         <div class="project-header">
+
           <div>
             <span class="project-meta">Narrativa visual</span>
             <h3>Arte</h3>
           </div>
-          <p class="project-description">Una serie construida desde la atmósfera, la imagen y la asociación de elementos.</p>
+
+          <p class="project-description">
+            Una serie construida desde la atmósfera, la imagen y la asociación de elementos.
+          </p>
+
         </div>
 
         <div class="gallery">
-          <div class="gallery-item"><img src="arte.jpeg" alt="Arte — narrativa visual" loading="lazy"></div>
-          <div class="gallery-item"><img src="arte1.jpeg" alt="Arte — narrativa visual" loading="lazy"></div>
-          <div class="gallery-item"><img src="arte2.jpeg" alt="Arte — narrativa visual" loading="lazy"></div>
-          <div class="gallery-item"><img src="arte3%20.jpeg" alt="Arte — narrativa visual" loading="lazy"></div>
+
+          <div class="gallery-item">
+            <img src="arte.jpeg" alt="Arte — narrativa visual" loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="arte1.jpeg" alt="Arte — narrativa visual" loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="arte2.jpeg" alt="Arte — narrativa visual" loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img src="arte3%20.jpeg" alt="Arte — narrativa visual" loading="lazy">
+          </div>
+
         </div>
 
-        <div class="gallery-note">Deslizá hacia el costado para ver la serie</div>
+        <div class="gallery-note">
+          Deslizá hacia el costado para ver la serie
+        </div>
+
       </article>
 
     </div>
   </section>
 
+
   <section>
+
     <div class="container">
 
       <div class="section-heading">
         <span class="section-label">Mirada</span>
-        <h2>La imagen como lenguaje.</h2>
+
+        <h2>
+          La imagen como lenguaje.
+        </h2>
       </div>
 
       <div class="about-grid">
+
         <div class="about-large">
           No se trata solo de mostrar.
           Se trata de encontrar una forma de contar.
         </div>
 
         <div class="about-text">
-          <p>Desarrollo propuestas visuales desde la fotografía, la dirección y la curaduría, buscando que cada imagen tenga una intención y forme parte de un universo coherente.</p>
-          <p>Trabajo con marcas, proyectos y personas que quieren construir una identidad visual propia y comunicar desde un lugar auténtico.</p>
+
+          <p>
+            Desarrollo propuestas visuales desde la fotografía, la dirección y la curaduría, buscando que cada imagen tenga una intención y forme parte de un universo coherente.
+          </p>
+
+          <p>
+            Trabajo con marcas, proyectos y personas que quieren construir una identidad visual propia y comunicar desde un lugar auténtico.
+          </p>
+
         </div>
+
       </div>
 
     </div>
+
   </section>
 
+
   <section id="contacto">
+
     <div class="container contact-grid">
 
       <div>
-        <span class="section-label">Contacto</span>
-        <h2>Hablemos de tu proyecto.</h2>
-        <p class="contact-text">Contame sobre tu marca, proyecto o idea y te respondo para conversar sobre la propuesta más adecuada.</p>
+
+        <span class="section-label">
+          Contacto
+        </span>
+
+        <h2>
+          Hablemos de tu proyecto.
+        </h2>
+
+        <p class="contact-text">
+          Contame sobre tu marca, proyecto o idea y te respondo para conversar sobre la propuesta más adecuada.
+        </p>
+
       </div>
+
 
       <form action="https://formspree.io/f/mnpnzgov" method="POST">
 
@@ -666,6 +1258,7 @@
 
         <div class="field">
           <label for="servicio">Servicio de interés</label>
+
           <select id="servicio" name="servicio">
             <option value="">Seleccionar</option>
             <option value="Pack Inicio">Pack Inicio</option>
@@ -673,6 +1266,7 @@
             <option value="Propuesta personalizada">Propuesta personalizada</option>
             <option value="Contenido con material existente">Contenido con material existente</option>
           </select>
+
         </div>
 
         <div class="field">
@@ -680,40 +1274,66 @@
           <textarea id="mensaje" name="mensaje" required></textarea>
         </div>
 
-        <button type="submit" class="submit">Enviar consulta</button>
+        <button type="submit" class="submit">
+          Enviar consulta
+        </button>
 
       </form>
+
     </div>
+
   </section>
 
+
   <section class="social">
+
     <div class="container">
-      <span class="section-label">Encontrame también en</span>
+
+      <span class="section-label">
+        Encontrame también en
+      </span>
 
       <div class="social-links">
 
         <a href="https://www.instagram.com/mirna.photos/" target="_blank" rel="noopener">
+
           <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
             <circle cx="12" cy="12" r="4.2"/>
             <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/>
           </svg>
+
           Instagram
+
         </a>
 
-        <a href="https://www.behance.net/mirnamorbiducci" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.behance.net/mirnamorbiducci" target="_blank" rel="noopener">
+          Behance
+        </a>
 
       </div>
+
     </div>
+
   </section>
 
 </main>
 
+
 <footer>
+
   <div class="container footer-inner">
-    <span>Mirna Morbiducci</span>
-    <span>Fotografía · Bahía Blanca, Argentina</span>
+
+    <span>
+      Mirna Morbiducci
+    </span>
+
+    <span>
+      Fotografía · Bahía Blanca, Argentina
+    </span>
+
   </div>
+
 </footer>
 
 </body>
